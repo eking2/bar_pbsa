@@ -1,0 +1,6 @@
+dest_path: '1C5X'
+ligand_res: 'DRG'
+istrng: 150
+epsin: 1.0
+radiscale: 1.0
+protscale: 1.0

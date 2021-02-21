@@ -7,6 +7,7 @@ import parmed.amber
 import parmed.tools
 from pathlib import Path
 import pytraj as pt
+import shutil
 
 
 def init_logger(log_path='mbar_pbsa.log'):
@@ -30,13 +31,10 @@ def parse_args():
     subparsers = parser.add_subparsers()
 
     parser_a = subparsers.add_parser('strip')
-    parser_a.add_argument('-i', '--input', type=str, required=True, help='path to input yaml file')
+    parser_a.add_argument('strip_input', type=str, help='path to input strip yaml file')
 
     parser_b = subparsers.add_parser('prep')
-    parser_b.add_argument('-e', '--epsin', type=float, default=1.0, help='epsin parameter (default: 1.0)')
-    parser_b.add_argument('-r', '--radiscale', type=float, default=1.0, help='radiscale parameter (default: 1.0)')
-    parser_b.add_argument('-p', '--protscale', type=float, default=1.0, help='protscale parameter (default: 1.0)')
-    parser_b.add_argument('-s', '--sample', type=float, required=True, help='sample name')
+    parser_b.add_argument('prep_input', type=str, help='path in input prep yaml file')
 
     return parser.parse_args()
 
@@ -47,6 +45,7 @@ class strip_traj:
 
         self.yaml_path = yaml_path
         self.parse_input()
+
 
     def parse_input(self):
 
@@ -62,6 +61,7 @@ class strip_traj:
         self.ligand_mask = inp['ligand_mask']
         self.ion_decharge = inp['ion_decharge']
         self.last_half_frames = inp['last_half_frames']
+
 
     def get_decharged_ion(self, run_path):
 
@@ -90,6 +90,7 @@ class strip_traj:
         atom_idx = ion_line.split()[0]
 
         return atom_idx
+
 
     def make_folds(self):
 
@@ -181,7 +182,10 @@ class strip_traj:
         pt.write_traj(out_traj, traj)
         pt.write_parm(out_parm, traj.top)
 
+
     def align(self, ligcom, lamda):
+
+        '''concat all replicate trajectories, rmsd fit to first frame and autoimage'''
 
         # glob all trajs
         if ligcom == 'ligands':
@@ -212,13 +216,19 @@ class strip_traj:
         traj = traj.autoimage()
 
         # save concat traj, restart, parm
-        traj_save = Path(self.dest_dir, lamda, 'ti001.nc')
-        restart_save = Path(self.dest_dir, lamda, 'ti.rst7')
-        parm_save = Path(self.dest_dir, lamda, 'ti.parm')
+        # bug? only works with ncrst restarts, not rst7
+        traj_save = str(Path(self.dest_dir, f'concat_{ligcom}', lamda, 'ti001.nc'))
+        restart_save = Path(self.dest_dir, f'concat_{ligcom}', lamda, 'ti.ncrst')
+        parm_save = str(Path(self.dest_dir, f'concat_{ligcom}', lamda, 'ti.parm'))
 
-        pt.write_traj(str(traj_save), traj)
-        pt.save(str(restart_save), traj, frame_indices=[0])
-        pt.save(str(parm_save), traj.top)
+        pt.write_traj(traj_save, traj)
+        pt.write_traj(str(restart_save), traj, frame_indices=[0])
+        pt.save(parm_save, traj.top)
+
+        # fix restart name, remove suffix
+        Path(f'{restart_save}.1').rename(restart_save)
+
+        logging.info(f'align {self.dest_path} {ligcom} {lamda}')
 
 
     def strip_all_traj(self):
@@ -232,25 +242,128 @@ class strip_traj:
                 self.strip_single_traj('complex', com_path, lamda)
 
 
-    def test(self):
+    def align_all_traj(self):
 
-        #path = self.ligand_paths[1]
-        #print(path)
-        #idx = self.get_decharged_ion(path)
-        #print(idx)
+        for lig_lambda in self.lig_lamdas:
+            self.align('ligands', lig_lambda)
 
-        #self.run_strip('ligands', '0.200')
+        for com_lambda in self.com_lamdas:
+            self.align('complex', com_lambda)
+
+
+    def run_all(self):
+
         self.make_folds()
-        #self.strip_single_traj('ligands', path , '0.100')
-
-        #self.strip_all_traj()
-
-        self.align('complex', '0.100')
+        self.strip_all_traj()
+        self.align_all_traj()
 
 
-# superpose and concat frames from replicate trajectories
+class prep_bar_pbsa:
 
-# output example pdbs for sanity check
+    def __init__(self, yaml_path):
+
+        self.yaml_path = yaml_path
+        self.parse_input()
+
+
+    def parse_input(self):
+
+        '''parse input yaml'''
+
+        with open(self.yaml_path) as f:
+            inp = yaml.safe_load(f)
+            logging.info(inp)
+
+        self.dest_path = inp['dest_path']
+        self.ligand_res = inp['ligand_res']
+        self.istrng = inp['istrng']
+        self.epsin = inp['epsin']
+        self.radiscale = inp['radiscale']
+        self.protscale = inp['protscale']
+
+
+    def get_n_frames(self, ligcom):
+
+        '''frame counts from first traj'''
+
+        assert ligcom in ['ligands', 'complex']
+
+        trajin = sorted(list(Path(self.dest_path, f'concat_{ligcom}').rglob('*.nc')))[0]
+        parm = sorted(list(Path(self.dest_path, f'concat_{ligcom}').rglob('*.parm')))[0]
+
+        traj = pt.iterload(str(trajin), str(parm))
+
+        return traj.n_frames
+
+
+    def write_sander(self, ligcom):
+
+        # set fillratio based on ligcom
+        if ligcom == 'ligands':
+            fillratio = 4
+            dest = Path(self.lig_dest, 'pb_input.txt')
+        elif ligcom == 'complex':
+            fillratio = 2
+            dest = Path(self.com_dest, 'pb_input.txt')
+
+        n_frames = self.get_n_frames(ligcom)
+
+        template = f'''PB energy calculation
+ &cntrl
+   imin = 5, nstlim = {n_frames}, dt = 0.002,
+   ntx = 2, irest = 0,
+   ntb = 0,
+   ntt = 1,
+   temp0 = 298.0, ig = -1,
+   ntp = 0,
+   ntc = 2, ntf = 2,
+   ioutfm = 1, iwrap = 0,
+   ntwe = 1000, ntwx = 10000, ntpr = 1, ntwr = 10000,
+   cut = 9999.0,
+   maxcyc = 1,
+   ipb=2, inp=0
+
+/
+&pb
+   npbverb=0, istrng={self.istrng}, epsout=80.0, epsin={self.epsin}, space=.5,
+   accept=0.001, radiopt=0, fillratio={fillratio},
+   npbopt=0, bcopt=1, solvopt=1, maxitn=10000,
+   frcopt=0, nfocus=2, radiscale={self.radiscale}, radires="{self.ligand_res}", protscale={self.protscale},
+   dprob=1.4
+/
+'''
+
+        Path(dest).write_text(template)
+        logging.info(f'{self.dest_path} {ligcom}\n{template}')
+
+
+    def make_folds(self):
+
+        self.lig_path = Path(self.dest_path, 'param_sweep_ligands')
+        self.com_path = Path(self.dest_path, 'param_sweep_complex')
+
+        folder = f'e_{self.epsin}_r_{self.radiscale}_p_{self.protscale}'
+
+        self.lig_dest = Path(self.lig_path, folder)
+        self.com_dest = Path(self.com_path, folder)
+
+        # copy clean dir over
+        com_source = Path(self.dest_path, 'concat_complex')
+        lig_source = Path(self.dest_path, 'concat_ligands')
+
+        shutil.copytree(com_source, str(self.com_dest))
+        shutil.copytree(lig_source, str(self.lig_dest))
+
+        logging.info(f'setup {self.lig_dest}')
+        logging.info(f'setup {self.com_dest}')
+
+
+    def run_all(self):
+
+        self.make_folds()
+        self.write_sander('ligands')
+        self.write_sander('complex')
+
 
 # write pbsa input files, set epsin, radiscale, protscale
 
@@ -264,6 +377,10 @@ if __name__ == '__main__':
     init_logger()
     args = parse_args()
 
-    if args.input:
-        test = strip_traj(args.input)
-        test.test()
+    #if args.input:
+    #    test = strip_traj(args.input)
+    #    test.run_all()
+
+    if args.prep_input:
+        test = prep_bar_pbsa(args.prep_input)
+        test.run_all()
