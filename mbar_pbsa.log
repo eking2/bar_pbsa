@@ -4289,3 +4289,44 @@ PB energy calculation
    dprob=1.4
 /
 
+2021-02-21 20:11:21,579 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:12:12,582 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:27:13,737 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:27:13,739 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:27:28,838 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:27:28,839 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:27:44,267 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:27:44,269 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:27:54,009 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:27:54,011 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:28:04,753 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:28:04,754 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:39:34,121 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:39:34,122 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:39:49,515 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:39:49,517 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:48:47,502 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:48:47,504 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:49:23,016 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:49:23,018 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:53:08,022 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:53:08,023 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-02-21 20:53:08,024 : INFO : $AMBERHOME/bin/sander -i 1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c 1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.100/ti.ncrst -p 1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.000/ti.parm -O -o 1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000.out -y 1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.100/ti001.nc -r 1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000.ncrst -x 1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000_mdcrd -e 1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000_mden 
+2021-02-21 20:54:56,254 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:54:56,255 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-02-21 20:54:56,255 : INFO : $AMBERHOME/bin/sander -i 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.100/ti.ncrst -p 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.000/ti.parm -O -o 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000.out -y 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.100/ti001.nc -r 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000.ncrst -x 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000_mdcrd -e 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000_mden 
+2021-02-21 20:56:43,166 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:56:43,167 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-02-21 20:57:27,628 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 20:57:27,631 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-02-21 20:57:27,631 : INFO : /home/edward/amber18-with-patches/bin/sander -i 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.100/ti.ncrst -p 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.000/ti.parm -O -o 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000.out -y 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.100/ti001.nc -r 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000.ncrst -x 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000_mdcrd -e 1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.100_0.000_mden 
+2021-02-21 21:01:13,596 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 21:01:13,598 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-02-21 21:01:43,097 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 21:01:43,098 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-02-21 21:02:29,412 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 21:02:29,413 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-02-21 21:03:07,971 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 21:03:07,973 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-02-21 21:04:54,788 : INFO : Namespace(run_input='run_input.yaml')
+2021-02-21 21:04:54,790 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}

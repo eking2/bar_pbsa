@@ -8,6 +8,11 @@ import parmed.tools
 from pathlib import Path
 import pytraj as pt
 import shutil
+import multiprocessing as mp
+import subprocess
+import shlex
+import os
+import itertools
 
 
 def init_logger(log_path='mbar_pbsa.log'):
@@ -35,6 +40,9 @@ def parse_args():
 
     parser_b = subparsers.add_parser('prep')
     parser_b.add_argument('prep_input', type=str, help='path in input prep yaml file')
+
+    parser_c = subparsers.add_parser('run')
+    parser_c.add_argument('run_input', type=str, help='path in input run yaml file')
 
     return parser.parse_args()
 
@@ -365,9 +373,102 @@ class prep_bar_pbsa:
         self.write_sander('complex')
 
 
-# write pbsa input files, set epsin, radiscale, protscale
+class run_bar_pbsa:
 
-# multiprocess sander runs
+    def __init__(self, yaml_path):
+
+        self.yaml_path = yaml_path
+        self.parse_input()
+
+
+    def parse_input(self):
+
+        '''parse input yaml'''
+
+        with open(self.yaml_path) as f:
+            inp = yaml.safe_load(f)
+            logging.info(inp)
+
+        self.dest_path = inp['dest_path']
+        self.epsin = inp['epsin']
+        self.radiscale = inp['radiscale']
+        self.protscale = inp['protscale']
+        self.ligcom = inp['ligcom']
+
+        self.run_path = Path(self.dest_path, f'param_sweep_{self.ligcom}', f'e_{self.epsin}_r_{self.radiscale}_p_{self.protscale}')
+
+
+    def make_fold(self):
+
+        '''make folder to store bar output'''
+
+        self.bar_out = Path(self.run_path, 'bar_out')
+
+        if not self.bar_out.exists():
+            self.bar_out.mkdir()
+
+
+    def get_cross_terms(self):
+
+        '''get bar neighbor lambda window combinations'''
+
+        pairs = []
+
+        lamdas = sorted([x.name for x in self.run_path.iterdir() if x.is_dir()])
+
+        for i, lamda in enumerate(lamdas):
+            if i == 0:
+                pairs.append([lamdas[i], lamdas[i]])
+                pairs.append([lamdas[i], lamdas[i+1]])
+
+            elif i == len(lamdas) - 1:
+                pairs.append([lamdas[i], lamdas[i]])
+                pairs.append([lamdas[i], lamdas[i-1]])
+
+            else:
+                pairs.append([lamdas[i], lamdas[i-1]])
+                pairs.append([lamdas[i], lamdas[i]])
+                pairs.append([lamdas[i], lamdas[i+1]])
+
+        return pairs
+
+
+    def run_traj_parm(self, traj, parm):
+
+        amberhome = os.environ['AMBERHOME']
+
+        cmd = f'{amberhome}/bin/sander -i {self.run_path}/pb_input.txt ' \
+              f'-c {self.run_path}/{traj}/ti.ncrst ' \
+              f'-p {self.run_path}/{parm}/ti.parm ' \
+              f'-O -o {self.bar_out}/{traj}_{parm}.out ' \
+              f'-y {self.run_path}/{traj}/ti001.nc ' \
+              f'-r {self.bar_out}/{traj}_{parm}.ncrst ' \
+              f'-x {self.bar_out}/{traj}_{parm}_mdcrd ' \
+              f'-e {self.bar_out}/{traj}_{parm}_mden '
+
+        logging.info(cmd)
+        subprocess.run(shlex.split(cmd))
+
+
+    def parallel_sander(self):
+
+        pass
+
+    def clean_up(self):
+
+        '''delete replicate traj files, ncrst, mdcrd, mden'''
+
+        restarts = self.bar_out.glob('*.ncrst')
+        mdcrds = self.bar_out.glob('*_mdcrd')
+        mdens = self.bar_out.glob('*_mden')
+        trajs = self.run_path.rglob('ti001.nc')
+
+        [x.unlink() for x in restarts]
+        [x.unlink() for x in mdcrds]
+        [x.unlink() for x in mdens]
+        #[x.unlink() for x in trajs]
+
+
 
 # bar calculations
 
@@ -376,11 +477,21 @@ if __name__ == '__main__':
 
     init_logger()
     args = parse_args()
+    logging.info(args)
 
     #if args.input:
     #    test = strip_traj(args.input)
     #    test.run_all()
 
-    if args.prep_input:
-        test = prep_bar_pbsa(args.prep_input)
-        test.run_all()
+    #if args.prep_input:
+    #    test = prep_bar_pbsa(args.prep_input)
+    #    test.run_all()
+
+    if args.run_input:
+        test = run_bar_pbsa(args.run_input)
+        #out = test.get_cross_terms()
+        #print(out)
+        test.make_fold()
+        #test.run_traj_parm('0.100', '0.000')
+        test.clean_up()
+
