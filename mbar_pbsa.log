@@ -4330,3 +4330,413 @@ PB energy calculation
 2021-02-21 21:03:07,973 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
 2021-02-21 21:04:54,788 : INFO : Namespace(run_input='run_input.yaml')
 2021-02-21 21:04:54,790 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 03:39:47,189 : INFO : Namespace(strip_input='strip_input.yaml')
+2021-03-01 03:40:14,102 : INFO : Namespace(strip_input='strip_input.yaml')
+2021-03-01 03:40:23,082 : INFO : Namespace(strip_input='strip_input.yaml')
+2021-03-01 03:40:23,085 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex', '/home/edward/bar_pbsa_demo/1C5X/t2/complex', '/home/edward/bar_pbsa_demo/1C5X/t3/complex', '/home/edward/bar_pbsa_demo/1C5X/t4/complex', '/home/edward/bar_pbsa_demo/1C5X/t5/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands', '/home/edward/bar_pbsa_demo/1C5X/t2/ligands', '/home/edward/bar_pbsa_demo/1C5X/t3/ligands', '/home/edward/bar_pbsa_demo/1C5X/t4/ligands', '/home/edward/bar_pbsa_demo/1C5X/t5/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True}
+2021-03-01 03:40:23,085 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-01 03:40:23,085 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-01 03:40:23,086 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-01 03:40:23,086 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-01 03:40:23,086 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-01 03:40:23,086 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-01 03:40:23,086 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t2/0.000
+2021-03-01 03:40:23,086 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t2/0.200
+2021-03-01 03:40:23,087 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t2/0.400
+2021-03-01 03:40:23,087 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t2/0.600
+2021-03-01 03:40:23,087 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t2/0.800
+2021-03-01 03:40:23,087 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t2/1.000
+2021-03-01 03:40:23,087 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t3/0.000
+2021-03-01 03:40:23,087 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t3/0.200
+2021-03-01 03:40:23,088 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t3/0.400
+2021-03-01 03:40:23,088 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t3/0.600
+2021-03-01 03:40:23,088 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t3/0.800
+2021-03-01 03:40:23,088 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t3/1.000
+2021-03-01 03:40:23,088 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t4/0.000
+2021-03-01 03:40:23,088 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t4/0.200
+2021-03-01 03:40:23,089 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t4/0.400
+2021-03-01 03:40:23,089 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t4/0.600
+2021-03-01 03:40:23,089 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t4/0.800
+2021-03-01 03:40:23,089 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t4/1.000
+2021-03-01 03:40:23,089 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t5/0.000
+2021-03-01 03:40:23,089 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t5/0.200
+2021-03-01 03:40:23,089 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t5/0.400
+2021-03-01 03:40:23,090 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t5/0.600
+2021-03-01 03:40:23,090 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t5/0.800
+2021-03-01 03:40:23,090 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t5/1.000
+2021-03-01 03:40:23,090 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-01 03:40:23,090 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-01 03:40:23,096 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-01 03:40:23,096 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-01 03:40:23,096 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-01 03:40:23,096 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-01 03:40:23,097 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t2/0.000
+2021-03-01 03:40:23,097 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t2/0.200
+2021-03-01 03:40:23,097 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t2/0.400
+2021-03-01 03:40:23,097 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t2/0.600
+2021-03-01 03:40:23,097 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t2/0.800
+2021-03-01 03:40:23,097 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t2/1.000
+2021-03-01 03:40:23,098 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t3/0.000
+2021-03-01 03:40:23,098 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t3/0.200
+2021-03-01 03:40:23,098 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t3/0.400
+2021-03-01 03:40:23,098 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t3/0.600
+2021-03-01 03:40:23,098 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t3/0.800
+2021-03-01 03:40:23,099 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t3/1.000
+2021-03-01 03:40:23,099 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t4/0.000
+2021-03-01 03:40:23,099 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t4/0.200
+2021-03-01 03:40:23,099 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t4/0.400
+2021-03-01 03:40:23,099 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t4/0.600
+2021-03-01 03:40:23,100 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t4/0.800
+2021-03-01 03:40:23,100 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t4/1.000
+2021-03-01 03:40:23,100 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t5/0.000
+2021-03-01 03:40:23,100 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t5/0.200
+2021-03-01 03:40:23,100 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t5/0.400
+2021-03-01 03:40:23,100 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t5/0.600
+2021-03-01 03:40:23,101 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t5/0.800
+2021-03-01 03:40:23,101 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t5/1.000
+2021-03-01 03:40:23,101 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-01 03:40:23,101 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-01 03:40:23,101 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-01 03:40:23,101 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-01 03:40:23,101 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-01 03:40:23,102 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-01 03:40:23,102 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:40:23,102 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:40:23,102 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:40:23,102 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:40:23,102 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:40:23,103 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:40:23,836 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-01 03:40:24,586 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-01 03:40:25,370 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-01 03:40:26,111 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-01 03:40:26,876 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-01 03:40:27,643 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-01 03:41:29,506 : INFO : Namespace(strip_input='strip_input.yaml')
+2021-03-01 03:41:29,509 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True}
+2021-03-01 03:41:29,510 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-01 03:41:29,510 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-01 03:41:29,510 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-01 03:41:29,510 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-01 03:41:29,510 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-01 03:41:29,510 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-01 03:41:29,511 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-01 03:41:29,511 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-01 03:41:29,511 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-01 03:41:29,511 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-01 03:41:29,511 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-01 03:41:29,511 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-01 03:41:29,512 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-01 03:41:29,512 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-01 03:41:29,512 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-01 03:41:29,512 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-01 03:41:29,512 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-01 03:41:29,512 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-01 03:41:29,513 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:41:29,513 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:41:29,513 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:41:29,513 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:41:29,513 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:41:29,513 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:41:30,254 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-01 03:41:31,010 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-01 03:41:31,799 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-01 03:41:32,547 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-01 03:41:33,303 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-01 03:41:34,079 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-01 03:41:36,817 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-01 03:41:39,672 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-01 03:41:42,520 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-01 03:41:45,385 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-01 03:41:48,212 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-01 03:41:51,053 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-01 03:41:51,105 : INFO : align 1C5X ligands 0.000
+2021-03-01 03:41:51,109 : INFO : align 1C5X ligands 0.200
+2021-03-01 03:41:51,113 : INFO : align 1C5X ligands 0.400
+2021-03-01 03:41:51,117 : INFO : align 1C5X ligands 0.600
+2021-03-01 03:41:51,121 : INFO : align 1C5X ligands 0.800
+2021-03-01 03:41:51,125 : INFO : align 1C5X ligands 1.000
+2021-03-01 03:41:51,173 : INFO : align 1C5X complex 0.000
+2021-03-01 03:41:51,222 : INFO : align 1C5X complex 0.200
+2021-03-01 03:41:51,271 : INFO : align 1C5X complex 0.400
+2021-03-01 03:41:51,319 : INFO : align 1C5X complex 0.600
+2021-03-01 03:41:51,367 : INFO : align 1C5X complex 0.800
+2021-03-01 03:41:51,415 : INFO : align 1C5X complex 1.000
+2021-03-01 03:44:41,053 : INFO : Namespace(command='strip', strip_input='strip_input.yaml')
+2021-03-01 03:44:41,056 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True}
+2021-03-01 03:44:41,056 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-01 03:44:41,057 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-01 03:44:41,057 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-01 03:44:41,057 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-01 03:44:41,057 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-01 03:44:41,057 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-01 03:44:41,058 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-01 03:44:41,058 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-01 03:44:41,058 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-01 03:44:41,058 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-01 03:44:41,058 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-01 03:44:41,058 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-01 03:44:41,059 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-01 03:44:41,059 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-01 03:44:41,059 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-01 03:44:41,059 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-01 03:44:41,059 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-01 03:44:41,059 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-01 03:44:41,059 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:44:41,060 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:44:41,060 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:44:41,060 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:44:41,060 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:44:41,060 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-01 03:44:41,777 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-01 03:44:42,527 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-01 03:44:43,307 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-01 03:44:44,049 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-01 03:44:44,798 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-01 03:44:45,566 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-01 03:44:48,273 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-01 03:44:51,116 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-01 03:44:53,934 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-01 03:44:56,811 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-01 03:44:59,686 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-01 03:45:02,502 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-01 03:45:02,540 : INFO : align 1C5X ligands 0.000
+2021-03-01 03:45:02,544 : INFO : align 1C5X ligands 0.200
+2021-03-01 03:45:02,548 : INFO : align 1C5X ligands 0.400
+2021-03-01 03:45:02,552 : INFO : align 1C5X ligands 0.600
+2021-03-01 03:45:02,555 : INFO : align 1C5X ligands 0.800
+2021-03-01 03:45:02,559 : INFO : align 1C5X ligands 1.000
+2021-03-01 03:45:02,608 : INFO : align 1C5X complex 0.000
+2021-03-01 03:45:02,656 : INFO : align 1C5X complex 0.200
+2021-03-01 03:45:02,704 : INFO : align 1C5X complex 0.400
+2021-03-01 03:45:02,752 : INFO : align 1C5X complex 0.600
+2021-03-01 03:45:02,801 : INFO : align 1C5X complex 0.800
+2021-03-01 03:45:02,849 : INFO : align 1C5X complex 1.000
+2021-03-01 03:45:15,131 : INFO : Namespace(command='prep', prep_input='prep_input.yaml')
+2021-03-01 03:45:15,133 : INFO : {'dest_path': '1C5X', 'ligand_res': 'DRG', 'istrng': 150, 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0}
+2021-03-01 03:45:15,154 : INFO : setup /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0
+2021-03-01 03:45:15,155 : INFO : setup /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0
+2021-03-01 03:45:15,158 : INFO : 1C5X ligands
+PB energy calculation
+ &cntrl
+   imin = 5, nstlim = 2, dt = 0.002,
+   ntx = 2, irest = 0,
+   ntb = 0,
+   ntt = 1,
+   temp0 = 298.0, ig = -1,
+   ntp = 0,
+   ntc = 2, ntf = 2,
+   ioutfm = 1, iwrap = 0,
+   ntwe = 1000, ntwx = 10000, ntpr = 1, ntwr = 10000,
+   cut = 9999.0,
+   maxcyc = 1,
+   ipb=2, inp=0
+
+/
+&pb
+   npbverb=0, istrng=150, epsout=80.0, epsin=1.0, space=.5,
+   accept=0.001, radiopt=0, fillratio=4,
+   npbopt=0, bcopt=1, solvopt=1, maxitn=10000,
+   frcopt=0, nfocus=2, radiscale=1.0, radires="DRG", protscale=1.0,
+   dprob=1.4
+/
+
+2021-03-01 03:45:15,175 : INFO : 1C5X complex
+PB energy calculation
+ &cntrl
+   imin = 5, nstlim = 2, dt = 0.002,
+   ntx = 2, irest = 0,
+   ntb = 0,
+   ntt = 1,
+   temp0 = 298.0, ig = -1,
+   ntp = 0,
+   ntc = 2, ntf = 2,
+   ioutfm = 1, iwrap = 0,
+   ntwe = 1000, ntwx = 10000, ntpr = 1, ntwr = 10000,
+   cut = 9999.0,
+   maxcyc = 1,
+   ipb=2, inp=0
+
+/
+&pb
+   npbverb=0, istrng=150, epsout=80.0, epsin=1.0, space=.5,
+   accept=0.001, radiopt=0, fillratio=2,
+   npbopt=0, bcopt=1, solvopt=1, maxitn=10000,
+   frcopt=0, nfocus=2, radiscale=1.0, radires="DRG", protscale=1.0,
+   dprob=1.4
+/
+
+2021-03-01 03:50:31,449 : INFO : Namespace(command='run', run_input='prep_input.yaml')
+2021-03-01 03:50:31,451 : INFO : {'dest_path': '1C5X', 'ligand_res': 'DRG', 'istrng': 150, 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0}
+2021-03-01 03:50:55,873 : INFO : Namespace(command='run', run_input='run_input.yaml')
+2021-03-01 03:50:55,875 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 03:58:53,623 : INFO : Namespace(command='run', run_input='run_input.yaml')
+2021-03-01 03:58:53,624 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 03:59:17,322 : INFO : Namespace(command='run', run_input='run_input.yaml')
+2021-03-01 03:59:17,323 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 03:59:17,582 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.000/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.000/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.000/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000_mden 
+2021-03-01 03:59:17,583 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.000/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.000/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200_mden 
+2021-03-01 03:59:17,583 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.000/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000_mden 
+2021-03-01 03:59:17,583 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200_mden 
+2021-03-01 03:59:17,583 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400_mden 
+2021-03-01 03:59:17,583 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400_mden 
+2021-03-01 03:59:17,583 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.200/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200_mden 
+2021-03-01 03:59:17,584 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600_mden 
+2021-03-01 03:59:17,584 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.400/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400_mden 
+2021-03-01 03:59:17,584 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600_mden 
+2021-03-01 03:59:17,584 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800_mden 
+2021-03-01 03:59:17,584 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.600/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600_mden 
+2021-03-01 03:59:17,585 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800_mden 
+2021-03-01 03:59:17,585 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/1.000/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000_mden 
+2021-03-01 03:59:17,585 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/1.000/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/0.800/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/1.000/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800_mden 
+2021-03-01 03:59:17,585 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/1.000/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/1.000/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/1.000/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000_mden 
+2021-03-01 04:00:23,377 : INFO : Namespace(command='run', run_input='complex_run_input.yaml')
+2021-03-01 04:00:23,378 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-03-01 04:00:23,652 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.000/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.000/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.000/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000_mden 
+2021-03-01 04:00:23,652 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.000/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.000/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200_mden 
+2021-03-01 04:00:23,653 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200_mden 
+2021-03-01 04:00:23,653 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400_mden 
+2021-03-01 04:00:23,653 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200_mden 
+2021-03-01 04:00:23,653 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600_mden 
+2021-03-01 04:00:23,653 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.000/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.200/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000_mden 
+2021-03-01 04:00:23,653 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400_mden 
+2021-03-01 04:00:23,653 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.400/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400_mden 
+2021-03-01 04:00:23,653 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600_mden 
+2021-03-01 04:00:23,654 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800_mden 
+2021-03-01 04:00:23,654 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.600/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600_mden 
+2021-03-01 04:00:23,654 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/1.000/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000_mden 
+2021-03-01 04:00:23,654 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800_mden 
+2021-03-01 04:00:23,654 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/1.000/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/1.000/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/1.000/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000_mden 
+2021-03-01 04:00:23,654 : INFO : /home/edward/amber18-with-patches/bin/sander -i /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/pb_input.txt -c /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/1.000/ti.ncrst -p /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/0.800/ti.parm -O -o /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out -y /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/1.000/ti001.nc -r /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.ncrst -x /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800_mdcrd -e /state/partition1/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800_mden 
+2021-03-01 04:10:44,948 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:10:44,950 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:14:18,666 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:14:18,668 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:14:28,904 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:14:28,906 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:17:27,472 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:17:27,473 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:17:27,474 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out
+2021-03-01 04:17:27,481 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out
+2021-03-01 04:17:27,485 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out
+2021-03-01 04:17:27,489 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out
+2021-03-01 04:17:27,494 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out
+2021-03-01 04:17:27,498 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out
+2021-03-01 04:17:27,503 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out
+2021-03-01 04:17:27,507 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out
+2021-03-01 04:17:27,512 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out
+2021-03-01 04:17:27,516 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out
+2021-03-01 04:17:27,520 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out
+2021-03-01 04:17:27,525 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out
+2021-03-01 04:17:27,529 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out
+2021-03-01 04:17:27,534 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out
+2021-03-01 04:17:27,538 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out
+2021-03-01 04:17:27,542 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out
+2021-03-01 04:19:03,221 : INFO : Namespace(calc_input='complex_run_input.yaml', command='calc')
+2021-03-01 04:19:03,222 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'complex'}
+2021-03-01 04:19:03,223 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out
+2021-03-01 04:19:03,229 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out
+2021-03-01 04:19:03,234 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out
+2021-03-01 04:19:03,238 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out
+2021-03-01 04:19:03,243 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out
+2021-03-01 04:19:03,247 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out
+2021-03-01 04:19:03,252 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out
+2021-03-01 04:19:03,256 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out
+2021-03-01 04:19:03,260 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out
+2021-03-01 04:19:03,265 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out
+2021-03-01 04:19:03,269 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out
+2021-03-01 04:19:03,274 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out
+2021-03-01 04:19:03,278 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out
+2021-03-01 04:19:03,282 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out
+2021-03-01 04:19:03,287 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out
+2021-03-01 04:19:03,291 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_complex/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out
+2021-03-01 04:42:48,096 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:42:48,097 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:42:48,098 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out
+2021-03-01 04:42:48,105 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out
+2021-03-01 04:42:48,109 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out
+2021-03-01 04:42:48,114 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out
+2021-03-01 04:42:48,118 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out
+2021-03-01 04:42:48,123 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out
+2021-03-01 04:42:48,127 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out
+2021-03-01 04:42:48,131 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out
+2021-03-01 04:42:48,136 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out
+2021-03-01 04:42:48,140 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out
+2021-03-01 04:42:48,145 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out
+2021-03-01 04:42:48,149 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out
+2021-03-01 04:42:48,153 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out
+2021-03-01 04:42:48,158 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out
+2021-03-01 04:42:48,162 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out
+2021-03-01 04:42:48,167 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out
+2021-03-01 04:43:06,367 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:43:06,369 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:43:06,370 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out
+2021-03-01 04:43:06,377 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out
+2021-03-01 04:43:06,381 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out
+2021-03-01 04:43:06,386 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out
+2021-03-01 04:43:06,390 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out
+2021-03-01 04:43:06,395 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out
+2021-03-01 04:43:06,399 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out
+2021-03-01 04:43:06,404 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out
+2021-03-01 04:43:06,408 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out
+2021-03-01 04:43:06,412 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out
+2021-03-01 04:43:06,417 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out
+2021-03-01 04:43:06,421 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out
+2021-03-01 04:43:06,426 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out
+2021-03-01 04:43:06,430 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out
+2021-03-01 04:43:06,434 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out
+2021-03-01 04:43:06,439 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out
+2021-03-01 04:44:28,800 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:44:28,802 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:44:28,803 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out
+2021-03-01 04:44:28,810 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out
+2021-03-01 04:44:28,814 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out
+2021-03-01 04:44:28,819 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out
+2021-03-01 04:44:28,823 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out
+2021-03-01 04:44:28,828 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out
+2021-03-01 04:44:28,832 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out
+2021-03-01 04:44:28,837 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out
+2021-03-01 04:44:28,841 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out
+2021-03-01 04:44:28,846 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out
+2021-03-01 04:44:28,850 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out
+2021-03-01 04:44:28,855 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out
+2021-03-01 04:44:28,859 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out
+2021-03-01 04:44:28,864 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out
+2021-03-01 04:44:28,868 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out
+2021-03-01 04:44:28,873 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out
+2021-03-01 04:44:36,670 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:44:36,672 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:44:36,673 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out
+2021-03-01 04:44:36,681 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out
+2021-03-01 04:44:36,686 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out
+2021-03-01 04:44:36,691 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out
+2021-03-01 04:44:36,696 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out
+2021-03-01 04:44:36,701 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out
+2021-03-01 04:44:36,705 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out
+2021-03-01 04:44:36,710 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out
+2021-03-01 04:44:36,715 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out
+2021-03-01 04:44:36,719 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out
+2021-03-01 04:44:36,724 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out
+2021-03-01 04:44:36,728 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out
+2021-03-01 04:44:36,733 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out
+2021-03-01 04:44:36,738 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out
+2021-03-01 04:44:36,742 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out
+2021-03-01 04:44:36,747 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out
+2021-03-01 04:45:28,037 : INFO : Namespace(calc_input='ligands_run_input.yaml', command='calc')
+2021-03-01 04:45:28,039 : INFO : {'dest_path': '1C5X', 'epsin': 1.0, 'radiscale': 1.0, 'protscale': 1.0, 'ligcom': 'ligands'}
+2021-03-01 04:45:28,040 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.000.out
+2021-03-01 04:45:28,047 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.000_0.200.out
+2021-03-01 04:45:28,052 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.000.out
+2021-03-01 04:45:28,056 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.200.out
+2021-03-01 04:45:28,061 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.200_0.400.out
+2021-03-01 04:45:28,066 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.200.out
+2021-03-01 04:45:28,070 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.400.out
+2021-03-01 04:45:28,075 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.400_0.600.out
+2021-03-01 04:45:28,080 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.400.out
+2021-03-01 04:45:28,084 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.600.out
+2021-03-01 04:45:28,089 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.600_0.800.out
+2021-03-01 04:45:28,094 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.600.out
+2021-03-01 04:45:28,098 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_0.800.out
+2021-03-01 04:45:28,103 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/0.800_1.000.out
+2021-03-01 04:45:28,107 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_0.800.out
+2021-03-01 04:45:28,112 : INFO : parsing /home/edward/bar_pbsa/1C5X/param_sweep_ligands/e_1.0_r_1.0_p_1.0/bar_out/1.000_1.000.out

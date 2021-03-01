@@ -13,6 +13,7 @@ import subprocess
 import shlex
 import os
 import itertools
+import pymbar
 
 
 def init_logger(log_path='mbar_pbsa.log'):
@@ -33,7 +34,7 @@ def parse_args():
     '''
 
     parser = argparse.ArgumentParser()
-    subparsers = parser.add_subparsers()
+    subparsers = parser.add_subparsers(dest='command')
 
     parser_a = subparsers.add_parser('strip')
     parser_a.add_argument('strip_input', type=str, help='path to input strip yaml file')
@@ -43,6 +44,9 @@ def parse_args():
 
     parser_c = subparsers.add_parser('run')
     parser_c.add_argument('run_input', type=str, help='path in input run yaml file')
+
+    parser_d = subparsers.add_parser('calc')
+    parser_d.add_argument('calc_input', type=str, help='path in input calc yaml file (same as run input)')
 
     return parser.parse_args()
 
@@ -86,25 +90,28 @@ class strip_traj:
         ions.execute()
         ions_str = str(ions)
 
+        # get all ions
+        ions_idx = []
         for line in ions_str.split('\n'):
             if len(line.split()) > 9 and \
                line.split()[9] not in ['-1.0000', '1.0000'] and \
                'ATOM' not in line:
 
                 ion_line = line
-                break
 
-        # get index
-        atom_idx = ion_line.split()[0]
+                # get index
+                atom_idx = ion_line.split()[0]
 
-        return atom_idx
+                ions_idx.append(atom_idx)
+
+        return '|@'.join(ions_idx)
 
 
     def make_folds(self):
 
         '''make folders to save stripped trajectories'''
 
-        self.dest_dir = Path(self.dest_path)
+        self.dest_dir = Path(Path.cwd(), self.dest_path)
 
         # make for stripped complex and ligands
         self.com_folds = [f't{i}' for i in range(1, len(self.complex_paths) + 1)]
@@ -309,10 +316,10 @@ class prep_bar_pbsa:
         # set fillratio based on ligcom
         if ligcom == 'ligands':
             fillratio = 4
-            dest = Path(self.lig_dest, 'pb_input.txt')
+            dest = Path(Path.cwd(), self.lig_dest, 'pb_input.txt')
         elif ligcom == 'complex':
             fillratio = 2
-            dest = Path(self.com_dest, 'pb_input.txt')
+            dest = Path(Path.cwd(), self.com_dest, 'pb_input.txt')
 
         n_frames = self.get_n_frames(ligcom)
 
@@ -347,8 +354,8 @@ class prep_bar_pbsa:
 
     def make_folds(self):
 
-        self.lig_path = Path(self.dest_path, 'param_sweep_ligands')
-        self.com_path = Path(self.dest_path, 'param_sweep_complex')
+        self.lig_path = Path(Path.cwd(), self.dest_path, 'param_sweep_ligands')
+        self.com_path = Path(Path.cwd(), self.dest_path, 'param_sweep_complex')
 
         folder = f'e_{self.epsin}_r_{self.radiscale}_p_{self.protscale}'
 
@@ -395,7 +402,7 @@ class run_bar_pbsa:
         self.protscale = inp['protscale']
         self.ligcom = inp['ligcom']
 
-        self.run_path = Path(self.dest_path, f'param_sweep_{self.ligcom}', f'e_{self.epsin}_r_{self.radiscale}_p_{self.protscale}')
+        self.run_path = Path(Path.cwd(), self.dest_path, f'param_sweep_{self.ligcom}', f'e_{self.epsin}_r_{self.radiscale}_p_{self.protscale}')
 
 
     def make_fold(self):
@@ -414,7 +421,8 @@ class run_bar_pbsa:
 
         pairs = []
 
-        lamdas = sorted([x.name for x in self.run_path.iterdir() if x.is_dir()])
+        # ignore bar_out folder
+        lamdas = sorted([x.name for x in self.run_path.iterdir() if x.is_dir() if x.name != 'bar_out'])
 
         for i, lamda in enumerate(lamdas):
             if i == 0:
@@ -435,6 +443,8 @@ class run_bar_pbsa:
 
     def run_traj_parm(self, traj, parm):
 
+        '''run cpu sander pbsa calculation for single traj-parm cross-term'''
+
         amberhome = os.environ['AMBERHOME']
 
         cmd = f'{amberhome}/bin/sander -i {self.run_path}/pb_input.txt ' \
@@ -452,7 +462,18 @@ class run_bar_pbsa:
 
     def parallel_sander(self):
 
-        pass
+        '''run all sander pbsa traj-parm cross terms in parallel'''
+
+        # make cross-terms for all traj-parm pairs
+        pairs = self.get_cross_terms()
+
+        # run parallel
+        pool = mp.Pool()
+        out = [pool.apply_async(self.run_traj_parm, args=(pair[0], pair[1])) for pair in pairs]
+
+        pool.close()
+        pool.join()
+
 
     def clean_up(self):
 
@@ -469,8 +490,137 @@ class run_bar_pbsa:
         #[x.unlink() for x in trajs]
 
 
+    def run_all(self):
+
+        self.make_fold()
+        self.parallel_sander()
+        self.clean_up()
+
 
 # bar calculations
+class parse_mbar:
+
+    def __init__(self, yaml_path):
+
+        self.yaml_path = yaml_path
+        self.parse_input()
+
+
+    def parse_input(self):
+
+        '''parse input yaml'''
+
+        with open(self.yaml_path) as f:
+            inp = yaml.safe_load(f)
+            logging.info(inp)
+
+        self.dest_path = inp['dest_path']
+        self.epsin = inp['epsin']
+        self.radiscale = inp['radiscale']
+        self.protscale = inp['protscale']
+        self.ligcom = inp['ligcom']
+
+        self.run_path = Path(Path.cwd(), self.dest_path, f'param_sweep_{self.ligcom}', f'e_{self.epsin}_r_{self.radiscale}_p_{self.protscale}')
+
+
+    def read_single(self, path):
+
+        '''parse energies from single amber output'''
+
+        traj = path.parts[-1].split('_')[0]
+        parm = path.parts[-1].split('_')[-1][:-4]
+
+        content = path.read_text().splitlines()
+
+        energies = []
+        for line in content:
+            if 'minimization completed, ENE=' in line:
+                energy = float(line.split()[3])
+                energies.append(energy)
+
+        df = pd.DataFrame(energies, columns=['energy'])
+        df['sample'] = self.dest_path
+        df['radiscale'] = self.radiscale
+        df['protscale'] = self.protscale
+        df['traj'] = traj
+        df['parm'] = parm
+        df['ligcom'] = self.ligcom
+        df['frame'] = range(1, len(energies) + 1)
+
+        return df
+
+
+    def get_outputs(self):
+
+        '''glob paths to amber outputs for every lambda window'''
+
+        outputs = sorted(list(self.run_path.rglob('*.out')))
+        return outputs
+
+
+    def get_all_energies(self):
+
+        '''
+        parse energies from amber outputs at all lambda windows and save 
+        to single dataframe
+        '''
+
+        outputs = self.get_outputs()
+        df_list = []
+
+        for out in outputs:
+            logging.info(f'parsing {out}')
+            df = self.read_single(out)
+            df_list.append(df)
+
+        self.df = pd.concat(df_list, ignore_index=True)
+        self.df.to_csv(Path(self.run_path, 'energies.csv'))
+
+
+    def run_bar(self, traj_lambda):
+
+        # wF = u01 - u00
+        # wR = u10 - u11
+
+        # get index of lambda, select next neighbor
+        all_lambdas = sorted(self.df['traj'].unique())
+        idx = all_lambdas.index(traj_lambda)
+        after = all_lambdas[idx+1]
+
+        u00 = self.df.query("traj == @traj_lambda and parm == @traj_lambda")['energy'].values
+        u01 = self.df.query("traj == @traj_lambda and parm == @after")['energy'].values
+        u10 = self.df.query("traj == @after and parm == @traj_lambda")['energy'].values
+        u11 = self.df.query("traj == @after and parm == @after")['energy'].values
+
+        wF = u01 - u00
+        wR = u10 - u11
+
+        # run bar
+        bar_en, stdev = pymbar.bar.BAR(wF, wR)
+
+        return bar_en, stdev
+
+
+    def run_all(self):
+
+        def sd_error_prop(col):
+            return np.sqrt(np.sum(np.square(col)))
+
+        self.get_all_energies()
+        lamdas = sorted(self.df['traj'].unique())[:-1]
+
+        energies = []
+        for lamda in lamdas:
+            bar, bar_std = self.run_bar(lamda)
+            energies.append([lamda, bar, bar_std])
+
+        # raw bar energies at each lambda
+        results = pd.DataFrame(energies, columns=['lambda', 'bar', 'bar_std'])
+        results.to_csv(Path(self.run_path, 'bar_energies.csv'), index=False)
+
+        # add together for final bar energies
+
+        pass
 
 
 if __name__ == '__main__':
@@ -479,19 +629,20 @@ if __name__ == '__main__':
     args = parse_args()
     logging.info(args)
 
-    #if args.input:
-    #    test = strip_traj(args.input)
-    #    test.run_all()
+    if args.command == 'strip':
+        cleaner = strip_traj(args.strip_input)
+        cleaner.run_all()
 
-    #if args.prep_input:
-    #    test = prep_bar_pbsa(args.prep_input)
-    #    test.run_all()
+    if args.command == 'prep':
+        prepper = prep_bar_pbsa(args.prep_input)
+        prepper.run_all()
 
-    if args.run_input:
-        test = run_bar_pbsa(args.run_input)
-        #out = test.get_cross_terms()
-        #print(out)
-        test.make_fold()
-        #test.run_traj_parm('0.100', '0.000')
-        test.clean_up()
+    if args.command == 'run':
+        runner = run_bar_pbsa(args.run_input)
+        runner.make_fold()
+        runner.run_all()
+
+    if args.command == 'calc':
+        calculator = parse_mbar(args.calc_input)
+        calculator.run_all()
 
