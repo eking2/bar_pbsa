@@ -27,31 +27,39 @@ def init_logger(log_path='mbar_pbsa.log'):
 def parse_args():
 
     '''
-    cli to 1) strip trajectories
-           2) prepare BAR/PBSA input parameters
-           3) run BAR/PBSA in parallel
-           4) post-process BAR data
+    CLI to 1) Strip trajectories
+           2) Prepare BAR/PBSA input parameters
+           3) Run BAR/PBSA in parallel
+           4) Post-process BAR data
     '''
 
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest='command')
 
     parser_a = subparsers.add_parser('strip')
-    parser_a.add_argument('strip_input', type=str, help='path to input strip yaml file')
+    parser_a.add_argument('strip_input', type=str, help='Path to input strip yaml file')
 
     parser_b = subparsers.add_parser('prep')
-    parser_b.add_argument('prep_input', type=str, help='path in input prep yaml file')
+    parser_b.add_argument('prep_input', type=str, help='Path in input prep yaml file')
 
     parser_c = subparsers.add_parser('run')
-    parser_c.add_argument('run_input', type=str, help='path in input run yaml file')
+    parser_c.add_argument('run_input', type=str, help='Path in input run yaml file')
 
     parser_d = subparsers.add_parser('calc')
-    parser_d.add_argument('calc_input', type=str, help='path in input calc yaml file (same as run input)')
+    parser_d.add_argument('calc_input', type=str, help='Path in input calc yaml file (same as run input)')
 
     return parser.parse_args()
 
 
 class strip_traj:
+
+    '''
+    Prepare explicit solvent trajectories for Sander PBSA by stripping water molecules 
+    and ions, concatenating replicate trajectories, and autoimaging/RMSD aligning snapshots
+    to first frame. Keep dummy counter-ions for decharging and ligand atoms through AMBER
+    mask selection. Setup can ignore the first half frames from each lambda window to 
+    avoid unequilibrated data.
+    '''
 
     def __init__(self, yaml_path):
 
@@ -61,7 +69,7 @@ class strip_traj:
 
     def parse_input(self):
 
-        '''parse input yaml'''
+        '''Parse input yaml'''
 
         with open(self.yaml_path) as f:
             inp = yaml.safe_load(f)
@@ -77,7 +85,7 @@ class strip_traj:
 
     def get_decharged_ion(self, run_path):
 
-        '''find index of decharged ion to keep'''
+        '''Find index of decharged ion to keep'''
 
         assert self.ion_decharge
 
@@ -109,7 +117,7 @@ class strip_traj:
 
     def make_folds(self):
 
-        '''make folders to save stripped trajectories'''
+        '''Make folders to save stripped trajectories'''
 
         self.dest_dir = Path(Path.cwd(), self.dest_path)
 
@@ -142,7 +150,7 @@ class strip_traj:
 
     def strip_single_traj(self, ligcom, run_path, lamda):
 
-        '''strip waters and ions, use amber mask to select which atoms to keep'''
+        '''Strip waters and ions, use amber mask to select which atoms to keep'''
 
         assert ligcom in ['ligands', 'complex']
 
@@ -200,7 +208,7 @@ class strip_traj:
 
     def align(self, ligcom, lamda):
 
-        '''concat all replicate trajectories, rmsd fit to first frame and autoimage'''
+        '''Concat all replicate trajectories, RMSD fit to first frame and autoimage'''
 
         # glob all trajs
         if ligcom == 'ligands':
@@ -275,6 +283,12 @@ class strip_traj:
 
 class prep_bar_pbsa:
 
+    '''
+    Write Sander PBSA input files with target surface area (radiscale, 
+    protscale) and interior dielectric (epsin) parameters for post-processing 
+    each trajectory. This is carried out for both the ligand and complex paths. 
+    '''
+
     def __init__(self, yaml_path):
 
         self.yaml_path = yaml_path
@@ -283,7 +297,7 @@ class prep_bar_pbsa:
 
     def parse_input(self):
 
-        '''parse input yaml'''
+        '''Parse input yaml'''
 
         with open(self.yaml_path) as f:
             inp = yaml.safe_load(f)
@@ -299,7 +313,7 @@ class prep_bar_pbsa:
 
     def get_n_frames(self, ligcom):
 
-        '''frame counts from first traj'''
+        '''Frame counts from first traj'''
 
         assert ligcom in ['ligands', 'complex']
 
@@ -382,6 +396,13 @@ class prep_bar_pbsa:
 
 class run_bar_pbsa:
 
+    '''
+    Run Sander BAR/PBSA calculations for neighboring lambdas with multiprocessing. 
+    This stage is carried out separately for the complex and ligand paths due 
+    to memory limitations, this way both sets of trajectories do not have to be 
+    stored together.
+    '''
+
     def __init__(self, yaml_path):
 
         self.yaml_path = yaml_path
@@ -390,7 +411,7 @@ class run_bar_pbsa:
 
     def parse_input(self):
 
-        '''parse input yaml'''
+        '''Parse input yaml'''
 
         with open(self.yaml_path) as f:
             inp = yaml.safe_load(f)
@@ -407,7 +428,7 @@ class run_bar_pbsa:
 
     def make_fold(self):
 
-        '''make folder to store bar output'''
+        '''Make folder to store bar output'''
 
         self.bar_out = Path(self.run_path, 'bar_out')
 
@@ -417,7 +438,7 @@ class run_bar_pbsa:
 
     def get_cross_terms(self):
 
-        '''get bar neighbor lambda window combinations'''
+        '''Get bar neighbor lambda window combinations'''
 
         pairs = []
 
@@ -443,7 +464,7 @@ class run_bar_pbsa:
 
     def run_traj_parm(self, traj, parm):
 
-        '''run cpu sander pbsa calculation for single traj-parm cross-term'''
+        '''Run cpu sander PBSA calculation for single traj-parm cross-term'''
 
         amberhome = os.environ['AMBERHOME']
 
@@ -462,7 +483,7 @@ class run_bar_pbsa:
 
     def parallel_sander(self):
 
-        '''run all sander pbsa traj-parm cross terms in parallel'''
+        '''Run all sander pbsa traj-parm cross terms in parallel'''
 
         # make cross-terms for all traj-parm pairs
         pairs = self.get_cross_terms()
@@ -477,7 +498,7 @@ class run_bar_pbsa:
 
     def clean_up(self):
 
-        '''delete replicate traj files, ncrst, mdcrd, mden'''
+        '''Delete replicate traj files, ncrst, mdcrd, mden'''
 
         restarts = self.bar_out.glob('*.ncrst')
         mdcrds = self.bar_out.glob('*_mdcrd')
@@ -487,6 +508,8 @@ class run_bar_pbsa:
         [x.unlink() for x in restarts]
         [x.unlink() for x in mdcrds]
         [x.unlink() for x in mdens]
+
+        # uncomment to delete trajectories
         #[x.unlink() for x in trajs]
 
 
@@ -497,8 +520,13 @@ class run_bar_pbsa:
         self.clean_up()
 
 
-# bar calculations
 class parse_mbar:
+
+    '''
+    Run BAR to calculate decharging energies at each lambda window and aggregate 
+    data to obtain the decharging energy for the full process. Perform 
+    individually for the complex and ligand paths.
+    '''
 
     def __init__(self, yaml_path):
 
@@ -508,7 +536,7 @@ class parse_mbar:
 
     def parse_input(self):
 
-        '''parse input yaml'''
+        '''Parse input yaml'''
 
         with open(self.yaml_path) as f:
             inp = yaml.safe_load(f)
@@ -525,7 +553,7 @@ class parse_mbar:
 
     def read_single(self, path):
 
-        '''parse energies from single amber output'''
+        '''Parse energies from single AMBER output'''
 
         traj = path.parts[-1].split('_')[0]
         parm = path.parts[-1].split('_')[-1][:-4]
@@ -552,7 +580,7 @@ class parse_mbar:
 
     def get_outputs(self):
 
-        '''glob paths to amber outputs for every lambda window'''
+        '''Glob paths to AMBER outputs for every lambda window'''
 
         outputs = sorted(list(self.run_path.rglob('*.out')))
         return outputs
@@ -561,7 +589,7 @@ class parse_mbar:
     def get_all_energies(self):
 
         '''
-        parse energies from amber outputs at all lambda windows and save 
+        Parse energies from AMBER outputs at all lambda windows and save 
         to single dataframe
         '''
 
@@ -603,10 +631,12 @@ class parse_mbar:
 
     def run_all(self):
 
-        def sd_error_prop(col):
-            return np.sqrt(np.sum(np.square(col)))
+        def sd_error_prop(arr):
+            return np.sqrt(np.sum(np.square(arr)))
 
         self.get_all_energies()
+
+        # can't run bar on last lambda
         lamdas = sorted(self.df['traj'].unique())[:-1]
 
         energies = []
@@ -619,8 +649,16 @@ class parse_mbar:
         results.to_csv(Path(self.run_path, 'bar_energies.csv'), index=False)
 
         # add together for final bar energies
+        bar_total = results['bar'].sum()
+        bar_total_std = sd_error_prop(results['bar_std'].values)
 
-        pass
+        with open(Path(self.run_path, 'bar_final.txt'), 'w') as fo:
+            fo.write(f'bar_total: {bar_total}\n')
+            fo.write(f'bar_total_std: {bar_total_std}')
+
+        logging.info(f'{self.dest_path} {self.ligcom}')
+        logging.info(f'bar_total: {bar_total}')
+        logging.info(f'bar_total_std: {bar_total_std}')
 
 
 if __name__ == '__main__':
@@ -629,19 +667,25 @@ if __name__ == '__main__':
     args = parse_args()
     logging.info(args)
 
+    # >>> python bar_pbsa.py strip strip_input.yaml
     if args.command == 'strip':
         cleaner = strip_traj(args.strip_input)
         cleaner.run_all()
 
+    # >>> python bar_pbsa.py prep prep_input.yaml
     if args.command == 'prep':
         prepper = prep_bar_pbsa(args.prep_input)
         prepper.run_all()
 
+    # >>> python bar_pbsa.py run complex_run_input.yaml
+    # >>> python bar_pbsa.py run ligand_run_input.yaml
     if args.command == 'run':
         runner = run_bar_pbsa(args.run_input)
         runner.make_fold()
         runner.run_all()
 
+    # >>> python bar_pbsa.py calc complex_run_input.yaml
+    # >>> python bar_pbsa.py calc ligand_run_input.yaml
     if args.command == 'calc':
         calculator = parse_mbar(args.calc_input)
         calculator.run_all()
