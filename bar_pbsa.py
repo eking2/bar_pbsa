@@ -81,6 +81,7 @@ class strip_traj:
         self.ligand_mask = inp['ligand_mask']
         self.ion_decharge = inp['ion_decharge']
         self.last_half_frames = inp['last_half_frames']
+        self.stride = inp['stride']
 
 
     def get_decharged_ion(self, run_path):
@@ -189,6 +190,10 @@ class strip_traj:
         if self.last_half_frames:
             traj = traj[n_frames//2:]
 
+        # subsample
+        if self.stride != 1:
+            traj = traj[::self.stride]
+
         # save nc and restart
         path_idx = paths.index(run_path)
 
@@ -211,17 +216,18 @@ class strip_traj:
         '''Concat all replicate trajectories, RMSD fit to first frame and autoimage'''
 
         # glob all trajs
+        # keep corresponding parm at each lambda to maintain partial charges
         if ligcom == 'ligands':
             paths = sorted(list(Path(self.dest_dir, 'ligands').glob(f'*/{lamda}/*.nc')))
-            parm = sorted(list(Path(self.dest_dir, 'ligands').rglob('*.parm7')))[0]
-        else:
+            parm = sorted(list(Path(self.dest_dir, 'ligands').glob(f'*/{lamda}/*.parm7')))
+        elif ligcom == 'complex':
             paths = sorted(list(Path(self.dest_dir, 'complex').glob(f'*/{lamda}/*.nc')))
-            parm = sorted(list(Path(self.dest_dir, 'complex').rglob('*.parm7')))[0]
+            parm = sorted(list(Path(self.dest_dir, 'complex').glob(f'*/{lamda}/*.parm7')))
 
         paths = list(map(str, paths))
 
         # read first parm
-        parm = str(parm)
+        parm = str(parm[0])
 
         # iterload all
         traj = pt.iterload(paths, parm)

@@ -14,3 +14,4 @@ ligand_paths:
 ligand_mask: ':DRG'
 ion_decharge: True
 last_half_frames: True
+stride: 1

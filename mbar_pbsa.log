@@ -4836,3 +4836,997 @@ PB energy calculation
 2021-03-02 02:39:27,666 : INFO : 1C5X complex
 2021-03-02 02:39:27,666 : INFO : bar_total: 0.0
 2021-03-02 02:39:27,667 : INFO : bar_total_std: 0.0
+2021-03-02 13:39:22,557 : INFO : Namespace(command='strip', strip_input='1C5Y_inputs/strip_input.yaml')
+2021-03-02 13:39:22,560 : INFO : {'dest_path': '1C5Y', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5Y/t1/complex', '/home/edward/bar_pbsa_demo/1C5Y/t2/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5Y/t1/ligands', '/home/edward/bar_pbsa_demo/1C5Y/t2/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 10}
+2021-03-02 13:39:22,561 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.000
+2021-03-02 13:39:22,561 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.100
+2021-03-02 13:39:22,561 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.200
+2021-03-02 13:39:22,561 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.300
+2021-03-02 13:39:22,561 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.400
+2021-03-02 13:39:22,562 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.500
+2021-03-02 13:39:22,562 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.600
+2021-03-02 13:39:22,562 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.700
+2021-03-02 13:39:22,562 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.800
+2021-03-02 13:39:22,562 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.900
+2021-03-02 13:39:22,562 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/1.000
+2021-03-02 13:39:22,563 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.000
+2021-03-02 13:39:22,563 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.100
+2021-03-02 13:39:22,586 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.200
+2021-03-02 13:39:22,587 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.300
+2021-03-02 13:39:22,587 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.400
+2021-03-02 13:39:22,587 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.500
+2021-03-02 13:39:22,588 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.600
+2021-03-02 13:39:22,588 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.700
+2021-03-02 13:39:22,589 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.800
+2021-03-02 13:39:22,589 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.900
+2021-03-02 13:39:22,589 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/1.000
+2021-03-02 13:39:22,590 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.000
+2021-03-02 13:39:22,590 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.100
+2021-03-02 13:39:22,591 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.200
+2021-03-02 13:39:22,591 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.300
+2021-03-02 13:39:22,592 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.400
+2021-03-02 13:39:22,592 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.500
+2021-03-02 13:39:22,592 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.600
+2021-03-02 13:39:22,593 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.700
+2021-03-02 13:39:22,593 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.800
+2021-03-02 13:39:22,593 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.900
+2021-03-02 13:39:22,593 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/1.000
+2021-03-02 13:39:22,594 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.000
+2021-03-02 13:39:22,604 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.100
+2021-03-02 13:39:22,605 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.200
+2021-03-02 13:39:22,605 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.300
+2021-03-02 13:39:22,605 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.400
+2021-03-02 13:39:22,606 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.500
+2021-03-02 13:39:22,606 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.600
+2021-03-02 13:39:22,606 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.700
+2021-03-02 13:39:22,607 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.800
+2021-03-02 13:39:22,607 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.900
+2021-03-02 13:39:22,607 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/1.000
+2021-03-02 13:39:22,611 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.000
+2021-03-02 13:39:22,612 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.100
+2021-03-02 13:39:22,612 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.200
+2021-03-02 13:39:22,612 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.300
+2021-03-02 13:39:22,613 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.400
+2021-03-02 13:39:22,613 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.500
+2021-03-02 13:39:22,613 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.600
+2021-03-02 13:39:22,613 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.700
+2021-03-02 13:39:22,614 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.800
+2021-03-02 13:39:22,614 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.900
+2021-03-02 13:39:22,614 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/1.000
+2021-03-02 13:39:22,615 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,615 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,615 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,615 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,616 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,616 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,616 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,616 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,617 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,623 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:22,624 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 13:39:24,107 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.000, mask: :DRG|@39
+2021-03-02 13:39:25,781 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.100, mask: :DRG|@39
+2021-03-02 13:39:27,350 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.200, mask: :DRG|@39
+2021-03-02 13:39:28,873 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.300, mask: :DRG|@39
+2021-03-02 13:39:30,385 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.400, mask: :DRG|@39
+2021-03-02 13:39:31,975 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.500, mask: :DRG|@39
+2021-03-02 13:39:33,510 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.600, mask: :DRG|@39
+2021-03-02 13:39:35,031 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.700, mask: :DRG|@39
+2021-03-02 13:39:36,651 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.800, mask: :DRG|@39
+2021-03-02 13:39:38,183 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.900, mask: :DRG|@39
+2021-03-02 13:39:39,678 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 1.000, mask: :DRG|@39
+2021-03-02 13:39:41,262 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.000, mask: :DRG|@39
+2021-03-02 13:39:42,782 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.100, mask: :DRG|@39
+2021-03-02 13:39:44,291 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.200, mask: :DRG|@39
+2021-03-02 13:39:45,793 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.300, mask: :DRG|@39
+2021-03-02 13:39:47,402 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.400, mask: :DRG|@39
+2021-03-02 13:39:48,947 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.500, mask: :DRG|@39
+2021-03-02 13:39:50,467 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.600, mask: :DRG|@39
+2021-03-02 13:39:52,044 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.700, mask: :DRG|@39
+2021-03-02 13:39:53,552 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.800, mask: :DRG|@39
+2021-03-02 13:39:55,053 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.900, mask: :DRG|@39
+2021-03-02 13:39:56,646 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 1.000, mask: :DRG|@39
+2021-03-02 13:40:02,546 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:08,657 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.100, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:14,625 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:20,845 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.300, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:27,121 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:33,305 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.500, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:39,468 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:45,820 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.700, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:51,778 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3889
+2021-03-02 13:40:57,713 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.900, mask: :1-245|:DRG|@3889
+2021-03-02 13:41:03,534 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3889
+2021-03-02 13:41:09,297 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.000, mask: :1-245|:DRG|@3870
+2021-03-02 13:41:15,098 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.100, mask: :1-245|:DRG|@3870
+2021-03-02 13:41:20,933 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.200, mask: :1-245|:DRG|@3870
+2021-03-02 13:41:26,814 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.300, mask: :1-245|:DRG|@3870
+2021-03-02 13:41:32,569 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.400, mask: :1-245|:DRG|@3870
+2021-03-02 13:41:38,251 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.500, mask: :1-245|:DRG|@3870
+2021-03-02 13:41:44,125 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.600, mask: :1-245|:DRG|@3870
+2021-03-02 13:41:50,108 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.700, mask: :1-245|:DRG|@3870
+2021-03-02 13:41:55,959 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.800, mask: :1-245|:DRG|@3870
+2021-03-02 13:42:01,975 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.900, mask: :1-245|:DRG|@3870
+2021-03-02 13:42:07,975 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 1.000, mask: :1-245|:DRG|@3870
+2021-03-02 13:42:08,135 : INFO : align 1C5Y ligands 0.000
+2021-03-02 13:42:08,180 : INFO : align 1C5Y ligands 0.100
+2021-03-02 13:42:08,222 : INFO : align 1C5Y ligands 0.200
+2021-03-02 13:42:08,264 : INFO : align 1C5Y ligands 0.300
+2021-03-02 13:42:08,305 : INFO : align 1C5Y ligands 0.400
+2021-03-02 13:42:08,350 : INFO : align 1C5Y ligands 0.500
+2021-03-02 13:42:08,401 : INFO : align 1C5Y ligands 0.600
+2021-03-02 13:42:08,447 : INFO : align 1C5Y ligands 0.700
+2021-03-02 13:42:08,491 : INFO : align 1C5Y ligands 0.800
+2021-03-02 13:42:08,535 : INFO : align 1C5Y ligands 0.900
+2021-03-02 13:42:08,578 : INFO : align 1C5Y ligands 1.000
+2021-03-02 13:42:08,754 : INFO : align 1C5Y complex 0.000
+2021-03-02 13:42:08,956 : INFO : align 1C5Y complex 0.100
+2021-03-02 13:42:09,128 : INFO : align 1C5Y complex 0.200
+2021-03-02 13:42:09,296 : INFO : align 1C5Y complex 0.300
+2021-03-02 13:42:09,474 : INFO : align 1C5Y complex 0.400
+2021-03-02 13:42:09,647 : INFO : align 1C5Y complex 0.500
+2021-03-02 13:42:09,818 : INFO : align 1C5Y complex 0.600
+2021-03-02 13:42:09,990 : INFO : align 1C5Y complex 0.700
+2021-03-02 13:42:10,159 : INFO : align 1C5Y complex 0.800
+2021-03-02 13:42:10,335 : INFO : align 1C5Y complex 0.900
+2021-03-02 13:42:10,508 : INFO : align 1C5Y complex 1.000
+2021-03-02 13:45:39,945 : INFO : Namespace(command='prep', prep_input='1C5Y_inputs/complex_run_input.yaml')
+2021-03-02 13:45:39,947 : INFO : {'dest_path': '1C5X', 'epsin': 1.43, 'radiscale': 1.1, 'protscale': 0.71, 'ligcom': 'complex'}
+2021-03-02 13:47:22,941 : INFO : Namespace(command='prep', prep_input='1C5Y_inputs/prep_input.yaml')
+2021-03-02 13:47:22,943 : INFO : {'dest_path': '1C5Y', 'ligand_res': 'DRG', 'istrng': 150, 'epsin': 1.43, 'radiscale': 1.1, 'protscale': 0.71}
+2021-03-02 13:47:23,171 : INFO : setup /home/edward/bar_pbsa/1C5Y/param_sweep_ligands/e_1.43_r_1.1_p_0.71
+2021-03-02 13:47:23,171 : INFO : setup /home/edward/bar_pbsa/1C5Y/param_sweep_complex/e_1.43_r_1.1_p_0.71
+2021-03-02 13:47:23,175 : INFO : 1C5Y ligands
+PB energy calculation
+ &cntrl
+   imin = 5, nstlim = 200, dt = 0.002,
+   ntx = 2, irest = 0,
+   ntb = 0,
+   ntt = 1,
+   temp0 = 298.0, ig = -1,
+   ntp = 0,
+   ntc = 2, ntf = 2,
+   ioutfm = 1, iwrap = 0,
+   ntwe = 1000, ntwx = 10000, ntpr = 1, ntwr = 10000,
+   cut = 9999.0,
+   maxcyc = 1,
+   ipb=2, inp=0
+
+/
+&pb
+   npbverb=0, istrng=150, epsout=80.0, epsin=1.43, space=.5,
+   accept=0.001, radiopt=0, fillratio=4,
+   npbopt=0, bcopt=1, solvopt=1, maxitn=10000,
+   frcopt=0, nfocus=2, radiscale=1.1, radires="DRG", protscale=0.71,
+   dprob=1.4
+/
+
+2021-03-02 13:47:23,194 : INFO : 1C5Y complex
+PB energy calculation
+ &cntrl
+   imin = 5, nstlim = 200, dt = 0.002,
+   ntx = 2, irest = 0,
+   ntb = 0,
+   ntt = 1,
+   temp0 = 298.0, ig = -1,
+   ntp = 0,
+   ntc = 2, ntf = 2,
+   ioutfm = 1, iwrap = 0,
+   ntwe = 1000, ntwx = 10000, ntpr = 1, ntwr = 10000,
+   cut = 9999.0,
+   maxcyc = 1,
+   ipb=2, inp=0
+
+/
+&pb
+   npbverb=0, istrng=150, epsout=80.0, epsin=1.43, space=.5,
+   accept=0.001, radiopt=0, fillratio=2,
+   npbopt=0, bcopt=1, solvopt=1, maxitn=10000,
+   frcopt=0, nfocus=2, radiscale=1.1, radires="DRG", protscale=0.71,
+   dprob=1.4
+/
+
+2021-03-02 14:22:20,881 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:22:20,885 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:22:20,886 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:22:20,886 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:22:20,886 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:22:20,887 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:22:20,887 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:22:20,887 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:22:20,887 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:22:20,888 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:22:20,888 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:22:20,888 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:22:20,888 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:22:20,888 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:22:20,889 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:22:20,889 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:22:20,889 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:22:20,889 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:22:20,889 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:22:20,890 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:22:20,890 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:20,890 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:20,890 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:20,891 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:20,891 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:20,891 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:21,681 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:22:55,450 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:22:55,456 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:22:55,457 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:22:55,458 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:22:55,458 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:22:55,458 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:22:55,459 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:22:55,459 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:22:55,460 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:22:55,460 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:22:55,460 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:22:55,461 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:22:55,461 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:22:55,461 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:22:55,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:22:55,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:22:55,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:22:55,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:22:55,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:22:55,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:22:55,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:55,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:55,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:55,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:55,465 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:55,465 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:22:56,312 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:22:57,201 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:22:57,982 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:22:58,770 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:22:59,583 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:23:00,348 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:23:03,162 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:23:06,100 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:23:09,016 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:23:12,030 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:23:14,863 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:23:17,755 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:23:17,811 : INFO : align 1C5X ligands 0.000
+2021-03-02 14:23:17,815 : INFO : align 1C5X ligands 0.200
+2021-03-02 14:23:17,819 : INFO : align 1C5X ligands 0.400
+2021-03-02 14:23:17,823 : INFO : align 1C5X ligands 0.600
+2021-03-02 14:23:17,827 : INFO : align 1C5X ligands 0.800
+2021-03-02 14:23:17,831 : INFO : align 1C5X ligands 1.000
+2021-03-02 14:23:17,891 : INFO : align 1C5X complex 0.000
+2021-03-02 14:23:17,950 : INFO : align 1C5X complex 0.200
+2021-03-02 14:23:18,009 : INFO : align 1C5X complex 0.400
+2021-03-02 14:23:18,069 : INFO : align 1C5X complex 0.600
+2021-03-02 14:23:18,128 : INFO : align 1C5X complex 0.800
+2021-03-02 14:23:18,188 : INFO : align 1C5X complex 1.000
+2021-03-02 14:28:26,211 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:28:26,214 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:28:26,214 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:28:26,214 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:28:26,214 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:28:26,215 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:28:26,215 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:28:26,215 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:28:26,215 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:28:26,215 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:28:26,215 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:28:26,215 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:28:26,216 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:28:26,216 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:28:26,216 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:28:26,216 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:28:26,216 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:28:26,216 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:28:26,216 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:28:26,217 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:28:26,217 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:26,217 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:26,217 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:26,217 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:26,217 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:26,217 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:26,972 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:28:34,964 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:28:34,966 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:28:34,967 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:28:34,967 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:28:34,968 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:28:34,968 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:28:34,968 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:28:34,968 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:28:34,968 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:28:34,968 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:28:34,969 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:28:34,969 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:28:34,969 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:28:34,969 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:28:34,969 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:28:34,970 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:28:34,970 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:28:34,970 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:28:34,970 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:28:34,970 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:28:34,970 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:34,971 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:34,971 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:34,971 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:34,971 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:34,971 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:28:35,706 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:28:36,512 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:28:37,261 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:28:38,012 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:28:38,806 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:28:39,551 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:28:42,261 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:28:45,093 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:28:47,955 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:28:50,827 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:28:53,560 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:28:56,440 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:28:56,488 : INFO : align 1C5X ligands 0.000
+2021-03-02 14:28:56,492 : INFO : align 1C5X ligands 0.200
+2021-03-02 14:28:56,496 : INFO : align 1C5X ligands 0.400
+2021-03-02 14:28:56,500 : INFO : align 1C5X ligands 0.600
+2021-03-02 14:28:56,503 : INFO : align 1C5X ligands 0.800
+2021-03-02 14:28:56,507 : INFO : align 1C5X ligands 1.000
+2021-03-02 14:31:43,347 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:31:43,349 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:31:43,350 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:31:43,350 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:31:43,350 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:31:43,350 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:31:43,350 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:31:43,351 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:31:43,351 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:31:43,351 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:31:43,351 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:31:43,351 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:31:43,351 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:31:43,351 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:31:43,352 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:31:43,352 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:31:43,352 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:31:43,352 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:31:43,352 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:31:43,352 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:31:43,352 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:43,353 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:43,353 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:43,353 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:43,353 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:43,353 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:44,093 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:31:54,381 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:31:54,384 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:31:54,384 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:31:54,385 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:31:54,385 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:31:54,385 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:31:54,385 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:31:54,385 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:31:54,386 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:31:54,386 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:31:54,386 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:31:54,386 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:31:54,386 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:31:54,386 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:31:54,387 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:31:54,387 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:31:54,387 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:31:54,387 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:31:54,387 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:31:54,387 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:31:54,388 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:54,388 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:54,388 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:54,388 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:54,388 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:54,388 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:31:55,179 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:31:56,093 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:31:56,941 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:31:57,792 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:31:58,685 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:31:59,514 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:32:02,541 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:32:05,970 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:32:09,383 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:32:12,718 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:32:15,801 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:32:18,667 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:33:10,613 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:33:10,616 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:33:10,616 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:33:10,617 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:33:10,617 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:33:10,617 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:33:10,617 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:33:10,617 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:33:10,618 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:33:10,618 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:33:10,618 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:33:10,618 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:33:10,618 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:33:10,618 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:33:10,619 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:33:10,619 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:33:10,619 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:33:10,619 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:33:10,619 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:33:10,619 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:33:10,620 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:33:10,620 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:33:10,620 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:33:10,620 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:33:10,620 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:33:10,620 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:33:11,400 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:33:12,311 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:33:13,153 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:33:14,145 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:33:15,081 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:33:15,937 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:33:18,790 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:33:21,810 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:33:25,027 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:33:28,030 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:33:30,835 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:33:33,738 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:33:33,787 : INFO : align 1C5X ligands 0.000
+2021-03-02 14:33:33,791 : INFO : align 1C5X ligands 0.200
+2021-03-02 14:33:33,795 : INFO : align 1C5X ligands 0.400
+2021-03-02 14:33:33,798 : INFO : align 1C5X ligands 0.600
+2021-03-02 14:33:33,802 : INFO : align 1C5X ligands 0.800
+2021-03-02 14:33:33,806 : INFO : align 1C5X ligands 1.000
+2021-03-02 14:34:36,921 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:34:36,924 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:34:36,924 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:34:36,925 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:34:36,925 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:34:36,925 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:34:36,925 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:34:36,925 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:34:36,925 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:34:36,926 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:34:36,926 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:34:36,926 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:34:36,926 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:34:36,926 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:34:36,926 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:34:36,927 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:34:36,927 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:34:36,927 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:34:36,927 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:34:36,927 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:34:36,927 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:34:36,928 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:34:36,928 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:34:36,928 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:34:36,928 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:34:36,928 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:34:37,658 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:34:38,471 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:34:39,228 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:34:39,988 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:34:40,812 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:34:41,564 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:34:44,301 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:34:47,168 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:34:50,074 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:34:52,978 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:34:55,752 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:34:58,637 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:34:58,686 : INFO : align 1C5X ligands 0.000
+2021-03-02 14:34:58,690 : INFO : align 1C5X ligands 0.200
+2021-03-02 14:34:58,694 : INFO : align 1C5X ligands 0.400
+2021-03-02 14:34:58,697 : INFO : align 1C5X ligands 0.600
+2021-03-02 14:34:58,701 : INFO : align 1C5X ligands 0.800
+2021-03-02 14:34:58,705 : INFO : align 1C5X ligands 1.000
+2021-03-02 14:36:17,809 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:36:17,812 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:36:17,813 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:36:17,813 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:36:17,813 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:36:17,813 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:36:17,813 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:36:17,813 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:36:17,814 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:36:17,814 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:36:17,814 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:36:17,814 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:36:17,814 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:36:17,814 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:36:17,815 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:36:17,815 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:36:17,815 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:36:17,815 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:36:17,815 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:36:17,815 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:36:17,816 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:36:17,816 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:36:17,816 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:36:17,816 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:36:17,816 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:36:17,816 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:36:18,545 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:36:19,362 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:36:20,118 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:36:20,870 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:36:21,672 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:36:22,422 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:36:25,153 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:36:27,998 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:36:30,884 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:36:33,790 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:36:36,540 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:36:39,418 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:36:39,466 : INFO : align 1C5X ligands 0.000
+2021-03-02 14:36:39,470 : INFO : align 1C5X ligands 0.200
+2021-03-02 14:36:39,474 : INFO : align 1C5X ligands 0.400
+2021-03-02 14:36:39,478 : INFO : align 1C5X ligands 0.600
+2021-03-02 14:36:39,482 : INFO : align 1C5X ligands 0.800
+2021-03-02 14:36:39,486 : INFO : align 1C5X ligands 1.000
+2021-03-02 14:39:14,959 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:39:14,962 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:39:14,962 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:39:14,962 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:39:14,963 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:39:14,963 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:39:14,963 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:39:14,963 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:39:14,963 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:39:14,963 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:39:14,964 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:39:14,964 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:39:14,964 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:39:14,964 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:39:14,964 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:39:14,964 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:39:14,965 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:39:14,965 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:39:14,965 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:39:14,965 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:39:14,965 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:39:14,965 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:39:14,966 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:39:14,966 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:39:14,966 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:39:14,966 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:39:15,706 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:39:16,529 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:39:17,293 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:39:18,060 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:39:18,866 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:39:19,623 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:39:22,388 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:39:25,325 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:39:28,250 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:39:31,174 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:39:33,959 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:39:36,873 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:39:36,921 : INFO : align 1C5X ligands 0.000
+2021-03-02 14:39:36,925 : INFO : align 1C5X ligands 0.200
+2021-03-02 14:39:36,929 : INFO : align 1C5X ligands 0.400
+2021-03-02 14:39:36,933 : INFO : align 1C5X ligands 0.600
+2021-03-02 14:39:36,937 : INFO : align 1C5X ligands 0.800
+2021-03-02 14:39:36,941 : INFO : align 1C5X ligands 1.000
+2021-03-02 14:41:42,750 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:41:42,753 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:41:42,753 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:41:42,754 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:41:42,754 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:41:42,754 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:41:42,754 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:41:42,754 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:41:42,754 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:41:42,754 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:41:42,755 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:41:42,755 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:41:42,755 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:41:42,755 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:41:42,755 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:41:42,755 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:41:42,755 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:41:42,756 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:41:42,756 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:41:42,756 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:41:42,756 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:42,756 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:42,756 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:42,756 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:42,757 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:42,757 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:43,530 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:41:52,910 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:41:52,913 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:41:52,914 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:41:52,914 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:41:52,914 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:41:52,914 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:41:52,914 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:41:52,915 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:41:52,915 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:41:52,915 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:41:52,915 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:41:52,915 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:41:52,915 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:41:52,916 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:41:52,916 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:41:52,916 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:41:52,916 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:41:52,916 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:41:52,916 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:41:52,917 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:41:52,917 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:52,917 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:52,917 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:52,917 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:52,917 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:52,918 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:41:53,650 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:41:54,467 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:41:55,227 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:41:55,989 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:41:56,811 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:41:57,562 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:42:00,312 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:42:03,175 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:42:06,084 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:42:08,999 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:42:11,773 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:42:14,669 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:43:44,015 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:43:44,018 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:44:45,032 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:44:45,035 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:44:45,035 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:44:45,035 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:44:45,035 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:44:45,036 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:44:45,036 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:44:45,036 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:44:45,036 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:44:45,036 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:44:45,036 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:44:45,036 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:44:45,037 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:44:45,037 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:44:45,037 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:44:45,037 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:44:45,037 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:44:45,037 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:44:45,037 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:44:45,037 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:44:45,038 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:44:45,038 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:44:45,038 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:44:45,038 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:44:45,038 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:44:45,038 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:30,019 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:45:30,022 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:45:30,022 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:45:30,023 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:45:30,023 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:45:30,023 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:45:30,023 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:45:30,023 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:45:30,023 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:45:30,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:45:30,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:45:30,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:45:30,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:45:30,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:45:30,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:45:30,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:45:30,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:45:30,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:45:30,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:45:30,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:45:30,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:30,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:30,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:30,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:30,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:30,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:30,095 : INFO : align 1C5X complex 0.000
+2021-03-02 14:45:30,158 : INFO : align 1C5X complex 0.200
+2021-03-02 14:45:30,220 : INFO : align 1C5X complex 0.400
+2021-03-02 14:45:30,282 : INFO : align 1C5X complex 0.600
+2021-03-02 14:45:30,346 : INFO : align 1C5X complex 0.800
+2021-03-02 14:45:30,408 : INFO : align 1C5X complex 1.000
+2021-03-02 14:45:45,020 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:45:45,023 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:45:45,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:45:45,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:45:45,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:45:45,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:45:45,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:45:45,024 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:45:45,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:45:45,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:45:45,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:45:45,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:45:45,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:45:45,025 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:45:45,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:45:45,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:45:45,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:45:45,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:45:45,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:45:45,026 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:45:45,027 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:45,027 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:45,027 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:45,027 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:45,027 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:45:45,028 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:10,536 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:46:10,539 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:46:10,539 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:46:10,539 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:46:10,539 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:46:10,540 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:46:10,540 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:46:10,540 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:46:10,540 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:46:10,540 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:46:10,540 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:46:10,540 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:46:10,541 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:46:10,541 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:46:10,541 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:46:10,541 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:46:10,541 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:46:10,541 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:46:10,541 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:46:10,542 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:46:10,542 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:10,542 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:10,542 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:10,542 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:10,542 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:10,542 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:32,458 : INFO : Namespace(command='strip', strip_input='1C5X_inputs/strip_input.yaml')
+2021-03-02 14:46:32,460 : INFO : {'dest_path': '1C5X', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5X/t1/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 1}
+2021-03-02 14:46:32,461 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.000
+2021-03-02 14:46:32,461 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.200
+2021-03-02 14:46:32,461 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.400
+2021-03-02 14:46:32,461 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.600
+2021-03-02 14:46:32,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/0.800
+2021-03-02 14:46:32,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/complex/t1/1.000
+2021-03-02 14:46:32,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.000
+2021-03-02 14:46:32,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.200
+2021-03-02 14:46:32,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.400
+2021-03-02 14:46:32,462 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.600
+2021-03-02 14:46:32,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/0.800
+2021-03-02 14:46:32,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/ligands/t1/1.000
+2021-03-02 14:46:32,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.000
+2021-03-02 14:46:32,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.200
+2021-03-02 14:46:32,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.400
+2021-03-02 14:46:32,463 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.600
+2021-03-02 14:46:32,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/0.800
+2021-03-02 14:46:32,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_complex/1.000
+2021-03-02 14:46:32,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:32,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:32,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:32,464 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:32,465 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:32,465 : INFO : mkdir /home/edward/bar_pbsa/1C5X/concat_ligands/1.000
+2021-03-02 14:46:33,187 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.000, mask: :DRG|@32
+2021-03-02 14:46:34,000 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.200, mask: :DRG|@32
+2021-03-02 14:46:34,750 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.400, mask: :DRG|@32
+2021-03-02 14:46:35,497 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.600, mask: :DRG|@32
+2021-03-02 14:46:36,293 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 0.800, mask: :DRG|@32
+2021-03-02 14:46:37,036 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/ligands, lambda: 1.000, mask: :DRG|@32
+2021-03-02 14:46:39,737 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:46:42,568 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3862
+2021-03-02 14:46:45,453 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3862
+2021-03-02 14:46:48,351 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3862
+2021-03-02 14:46:51,105 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3862
+2021-03-02 14:46:53,959 : INFO : /home/edward/bar_pbsa_demo/1C5X/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3862
+2021-03-02 14:46:54,008 : INFO : align 1C5X ligands 0.000
+2021-03-02 14:46:54,011 : INFO : align 1C5X ligands 0.200
+2021-03-02 14:46:54,015 : INFO : align 1C5X ligands 0.400
+2021-03-02 14:46:54,019 : INFO : align 1C5X ligands 0.600
+2021-03-02 14:46:54,023 : INFO : align 1C5X ligands 0.800
+2021-03-02 14:46:54,027 : INFO : align 1C5X ligands 1.000
+2021-03-02 14:46:54,086 : INFO : align 1C5X complex 0.000
+2021-03-02 14:46:54,146 : INFO : align 1C5X complex 0.200
+2021-03-02 14:46:54,205 : INFO : align 1C5X complex 0.400
+2021-03-02 14:46:54,264 : INFO : align 1C5X complex 0.600
+2021-03-02 14:46:54,323 : INFO : align 1C5X complex 0.800
+2021-03-02 14:46:54,383 : INFO : align 1C5X complex 1.000
+2021-03-02 14:53:59,935 : INFO : Namespace(command='strip', strip_input='1C5Y_inputs/strip_input.yaml')
+2021-03-02 14:53:59,937 : INFO : {'dest_path': '1C5Y', 'complex_paths': ['/home/edward/bar_pbsa_demo/1C5Y/t1/complex', '/home/edward/bar_pbsa_demo/1C5Y/t2/complex'], 'ligand_paths': ['/home/edward/bar_pbsa_demo/1C5Y/t1/ligands', '/home/edward/bar_pbsa_demo/1C5Y/t2/ligands'], 'ligand_mask': ':DRG', 'ion_decharge': True, 'last_half_frames': True, 'stride': 10}
+2021-03-02 14:53:59,938 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.000
+2021-03-02 14:53:59,938 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.100
+2021-03-02 14:53:59,938 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.200
+2021-03-02 14:53:59,938 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.300
+2021-03-02 14:53:59,938 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.400
+2021-03-02 14:53:59,939 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.500
+2021-03-02 14:53:59,939 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.600
+2021-03-02 14:53:59,939 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.700
+2021-03-02 14:53:59,939 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.800
+2021-03-02 14:53:59,939 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/0.900
+2021-03-02 14:53:59,939 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t1/1.000
+2021-03-02 14:53:59,940 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.000
+2021-03-02 14:53:59,940 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.100
+2021-03-02 14:53:59,940 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.200
+2021-03-02 14:53:59,940 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.300
+2021-03-02 14:53:59,940 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.400
+2021-03-02 14:53:59,941 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.500
+2021-03-02 14:53:59,942 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.600
+2021-03-02 14:53:59,942 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.700
+2021-03-02 14:53:59,943 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.800
+2021-03-02 14:53:59,943 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/0.900
+2021-03-02 14:53:59,944 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/complex/t2/1.000
+2021-03-02 14:53:59,944 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.000
+2021-03-02 14:53:59,945 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.100
+2021-03-02 14:53:59,945 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.200
+2021-03-02 14:53:59,945 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.300
+2021-03-02 14:53:59,946 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.400
+2021-03-02 14:53:59,946 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.500
+2021-03-02 14:53:59,947 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.600
+2021-03-02 14:53:59,947 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.700
+2021-03-02 14:53:59,947 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.800
+2021-03-02 14:53:59,948 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/0.900
+2021-03-02 14:53:59,948 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t1/1.000
+2021-03-02 14:53:59,949 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.000
+2021-03-02 14:53:59,949 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.100
+2021-03-02 14:53:59,949 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.200
+2021-03-02 14:53:59,950 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.300
+2021-03-02 14:53:59,950 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.400
+2021-03-02 14:53:59,950 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.500
+2021-03-02 14:53:59,951 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.600
+2021-03-02 14:53:59,951 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.700
+2021-03-02 14:53:59,951 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.800
+2021-03-02 14:53:59,952 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/0.900
+2021-03-02 14:53:59,952 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/ligands/t2/1.000
+2021-03-02 14:53:59,953 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.000
+2021-03-02 14:53:59,953 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.100
+2021-03-02 14:53:59,953 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.200
+2021-03-02 14:53:59,954 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.300
+2021-03-02 14:53:59,954 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.400
+2021-03-02 14:53:59,954 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.500
+2021-03-02 14:53:59,955 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.600
+2021-03-02 14:53:59,955 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.700
+2021-03-02 14:53:59,955 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.800
+2021-03-02 14:53:59,956 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/0.900
+2021-03-02 14:53:59,956 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_complex/1.000
+2021-03-02 14:53:59,956 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,957 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,957 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,957 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,958 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,958 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,958 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,959 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,959 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,959 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:53:59,960 : INFO : mkdir /home/edward/bar_pbsa/1C5Y/concat_ligands/1.000
+2021-03-02 14:54:01,384 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.000, mask: :DRG|@39
+2021-03-02 14:54:02,912 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.100, mask: :DRG|@39
+2021-03-02 14:54:04,368 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.200, mask: :DRG|@39
+2021-03-02 14:54:05,789 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.300, mask: :DRG|@39
+2021-03-02 14:54:07,198 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.400, mask: :DRG|@39
+2021-03-02 14:54:08,637 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.500, mask: :DRG|@39
+2021-03-02 14:54:10,039 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.600, mask: :DRG|@39
+2021-03-02 14:54:11,537 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.700, mask: :DRG|@39
+2021-03-02 14:54:13,022 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.800, mask: :DRG|@39
+2021-03-02 14:54:14,439 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 0.900, mask: :DRG|@39
+2021-03-02 14:54:15,816 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/ligands, lambda: 1.000, mask: :DRG|@39
+2021-03-02 14:54:17,286 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.000, mask: :DRG|@39
+2021-03-02 14:54:18,713 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.100, mask: :DRG|@39
+2021-03-02 14:54:20,063 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.200, mask: :DRG|@39
+2021-03-02 14:54:21,399 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.300, mask: :DRG|@39
+2021-03-02 14:54:22,886 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.400, mask: :DRG|@39
+2021-03-02 14:54:24,292 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.500, mask: :DRG|@39
+2021-03-02 14:54:25,784 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.600, mask: :DRG|@39
+2021-03-02 14:54:27,240 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.700, mask: :DRG|@39
+2021-03-02 14:54:28,600 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.800, mask: :DRG|@39
+2021-03-02 14:54:29,944 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 0.900, mask: :DRG|@39
+2021-03-02 14:54:31,369 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/ligands, lambda: 1.000, mask: :DRG|@39
+2021-03-02 14:54:36,929 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.000, mask: :1-245|:DRG|@3889
+2021-03-02 14:54:42,644 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.100, mask: :1-245|:DRG|@3889
+2021-03-02 14:54:48,198 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.200, mask: :1-245|:DRG|@3889
+2021-03-02 14:54:53,815 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.300, mask: :1-245|:DRG|@3889
+2021-03-02 14:54:59,547 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.400, mask: :1-245|:DRG|@3889
+2021-03-02 14:55:05,148 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.500, mask: :1-245|:DRG|@3889
+2021-03-02 14:55:10,864 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.600, mask: :1-245|:DRG|@3889
+2021-03-02 14:55:16,475 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.700, mask: :1-245|:DRG|@3889
+2021-03-02 14:55:22,074 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.800, mask: :1-245|:DRG|@3889
+2021-03-02 14:55:27,688 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 0.900, mask: :1-245|:DRG|@3889
+2021-03-02 14:55:33,244 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t1/complex, lambda: 1.000, mask: :1-245|:DRG|@3889
+2021-03-02 14:55:38,827 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.000, mask: :1-245|:DRG|@3870
+2021-03-02 14:55:44,386 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.100, mask: :1-245|:DRG|@3870
+2021-03-02 14:55:50,035 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.200, mask: :1-245|:DRG|@3870
+2021-03-02 14:55:55,709 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.300, mask: :1-245|:DRG|@3870
+2021-03-02 14:56:01,344 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.400, mask: :1-245|:DRG|@3870
+2021-03-02 14:56:06,826 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.500, mask: :1-245|:DRG|@3870
+2021-03-02 14:56:12,520 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.600, mask: :1-245|:DRG|@3870
+2021-03-02 14:56:18,202 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.700, mask: :1-245|:DRG|@3870
+2021-03-02 14:56:23,794 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.800, mask: :1-245|:DRG|@3870
+2021-03-02 14:56:29,441 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 0.900, mask: :1-245|:DRG|@3870
+2021-03-02 14:56:35,109 : INFO : /home/edward/bar_pbsa_demo/1C5Y/t2/complex, lambda: 1.000, mask: :1-245|:DRG|@3870
+2021-03-02 14:56:35,254 : INFO : align 1C5Y ligands 0.000
+2021-03-02 14:56:35,295 : INFO : align 1C5Y ligands 0.100
+2021-03-02 14:56:35,336 : INFO : align 1C5Y ligands 0.200
+2021-03-02 14:56:35,382 : INFO : align 1C5Y ligands 0.300
+2021-03-02 14:56:35,424 : INFO : align 1C5Y ligands 0.400
+2021-03-02 14:56:35,467 : INFO : align 1C5Y ligands 0.500
+2021-03-02 14:56:35,509 : INFO : align 1C5Y ligands 0.600
+2021-03-02 14:56:35,549 : INFO : align 1C5Y ligands 0.700
+2021-03-02 14:56:35,591 : INFO : align 1C5Y ligands 0.800
+2021-03-02 14:56:35,633 : INFO : align 1C5Y ligands 0.900
+2021-03-02 14:56:35,674 : INFO : align 1C5Y ligands 1.000
+2021-03-02 14:56:35,830 : INFO : align 1C5Y complex 0.000
+2021-03-02 14:56:36,006 : INFO : align 1C5Y complex 0.100
+2021-03-02 14:56:36,167 : INFO : align 1C5Y complex 0.200
+2021-03-02 14:56:36,326 : INFO : align 1C5Y complex 0.300
+2021-03-02 14:56:36,501 : INFO : align 1C5Y complex 0.400
+2021-03-02 14:56:36,671 : INFO : align 1C5Y complex 0.500
+2021-03-02 14:56:36,836 : INFO : align 1C5Y complex 0.600
+2021-03-02 14:56:37,026 : INFO : align 1C5Y complex 0.700
+2021-03-02 14:56:37,191 : INFO : align 1C5Y complex 0.800
+2021-03-02 14:56:37,361 : INFO : align 1C5Y complex 0.900
+2021-03-02 14:56:37,536 : INFO : align 1C5Y complex 1.000
+2021-03-02 14:57:06,957 : INFO : Namespace(command='prep', prep_input='1C5Y_inputs/prep_input.yaml')
+2021-03-02 14:57:06,959 : INFO : {'dest_path': '1C5Y', 'ligand_res': 'DRG', 'istrng': 150, 'epsin': 1.43, 'radiscale': 1.1, 'protscale': 0.71}
+2021-03-02 14:57:07,148 : INFO : setup /home/edward/bar_pbsa/1C5Y/param_sweep_ligands/e_1.43_r_1.1_p_0.71
+2021-03-02 14:57:07,148 : INFO : setup /home/edward/bar_pbsa/1C5Y/param_sweep_complex/e_1.43_r_1.1_p_0.71
+2021-03-02 14:57:07,152 : INFO : 1C5Y ligands
+PB energy calculation
+ &cntrl
+   imin = 5, nstlim = 200, dt = 0.002,
+   ntx = 2, irest = 0,
+   ntb = 0,
+   ntt = 1,
+   temp0 = 298.0, ig = -1,
+   ntp = 0,
+   ntc = 2, ntf = 2,
+   ioutfm = 1, iwrap = 0,
+   ntwe = 1000, ntwx = 10000, ntpr = 1, ntwr = 10000,
+   cut = 9999.0,
+   maxcyc = 1,
+   ipb=2, inp=0
+
+/
+&pb
+   npbverb=0, istrng=150, epsout=80.0, epsin=1.43, space=.5,
+   accept=0.001, radiopt=0, fillratio=4,
+   npbopt=0, bcopt=1, solvopt=1, maxitn=10000,
+   frcopt=0, nfocus=2, radiscale=1.1, radires="DRG", protscale=0.71,
+   dprob=1.4
+/
+
+2021-03-02 14:57:07,171 : INFO : 1C5Y complex
+PB energy calculation
+ &cntrl
+   imin = 5, nstlim = 200, dt = 0.002,
+   ntx = 2, irest = 0,
+   ntb = 0,
+   ntt = 1,
+   temp0 = 298.0, ig = -1,
+   ntp = 0,
+   ntc = 2, ntf = 2,
+   ioutfm = 1, iwrap = 0,
+   ntwe = 1000, ntwx = 10000, ntpr = 1, ntwr = 10000,
+   cut = 9999.0,
+   maxcyc = 1,
+   ipb=2, inp=0
+
+/
+&pb
+   npbverb=0, istrng=150, epsout=80.0, epsin=1.43, space=.5,
+   accept=0.001, radiopt=0, fillratio=2,
+   npbopt=0, bcopt=1, solvopt=1, maxitn=10000,
+   frcopt=0, nfocus=2, radiscale=1.1, radires="DRG", protscale=0.71,
+   dprob=1.4
+/
+
