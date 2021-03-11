@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import yaml
 import numpy as np
 import pandas as pd
@@ -428,6 +430,7 @@ class run_bar_pbsa:
         self.radiscale = inp['radiscale']
         self.protscale = inp['protscale']
         self.ligcom = inp['ligcom']
+        self.del_traj = inp['del_traj']
 
         self.run_path = Path(Path.cwd(), self.dest_path, f'param_sweep_{self.ligcom}', f'e_{self.epsin}_r_{self.radiscale}_p_{self.protscale}')
 
@@ -515,8 +518,8 @@ class run_bar_pbsa:
         [x.unlink() for x in mdcrds]
         [x.unlink() for x in mdens]
 
-        # uncomment to delete trajectories
-        #[x.unlink() for x in trajs]
+        if self.del_traj:
+            [x.unlink() for x in trajs]
 
 
     def run_all(self):
@@ -611,10 +614,60 @@ class parse_mbar:
         self.df.to_csv(Path(self.run_path, 'energies.csv'))
 
 
-    def run_bar(self, traj_lambda):
+#    def run_bar(self, traj_lambda):
+#
+#        # wF = u01 - u00
+#        # wR = u10 - u11
+#
+#        # get index of lambda, select next neighbor
+#        all_lambdas = sorted(self.df['traj'].unique())
+#        idx = all_lambdas.index(traj_lambda)
+#        after = all_lambdas[idx+1]
+#
+#        u00 = self.df.query("traj == @traj_lambda and parm == @traj_lambda")['energy'].values
+#        u01 = self.df.query("traj == @traj_lambda and parm == @after")['energy'].values
+#        u10 = self.df.query("traj == @after and parm == @traj_lambda")['energy'].values
+#        u11 = self.df.query("traj == @after and parm == @after")['energy'].values
+#
+#        wF = u01 - u00
+#        wR = u10 - u11
+#
+#        # run bar
+#        bar_en, stdev = pymbar.bar.BAR(wF, wR)
+#
+#        return bar_en, stdev
 
-        # wF = u01 - u00
-        # wR = u10 - u11
+
+    def bar_single(self, const, u10, u11, u01, u00):
+
+        numer = np.sum(1 / (1 + np.exp((u10 - u11 + const) / RT)))
+        denom = np.sum(1 / (1 + np.exp((u01 - u00 - const) / RT)))
+
+        dA = RT * np.log(numer/denom) + const
+
+        return dA
+
+
+    def bar_iter(self, const, u10, u11, u01, u00, thresh=0.001, max_iters=1000):
+
+        old_dA = const
+        new_dA = self.bar_single(old_dA, u10, u11, u01, u00)
+        diff = np.absolute(new_dA - old_dA)
+
+        bailout = 0
+        while diff >= thresh:
+
+            old_dA = new_dA
+            new_dA = self.bar_single(old_dA, u10, u11, u01, u00)
+
+            bailout += 1
+            if bailout == max_iters:
+                break
+
+        return new_dA
+
+
+    def run_bar(self, traj_lambda):
 
         # get index of lambda, select next neighbor
         all_lambdas = sorted(self.df['traj'].unique())
@@ -626,19 +679,15 @@ class parse_mbar:
         u10 = self.df.query("traj == @after and parm == @traj_lambda")['energy'].values
         u11 = self.df.query("traj == @after and parm == @after")['energy'].values
 
-        wF = u01 - u00
-        wR = u10 - u11
+        bar = self.bar_iter(0, u10, u11, u01, u00)
 
-        # run bar
-        bar_en, stdev = pymbar.bar.BAR(wF, wR)
-
-        return bar_en, stdev
+        return bar
 
 
     def run_all(self):
 
-        def sd_error_prop(arr):
-            return np.sqrt(np.sum(np.square(arr)))
+        #def sd_error_prop(arr):
+        #    return np.sqrt(np.sum(np.square(arr)))
 
         self.get_all_energies()
 
@@ -647,27 +696,32 @@ class parse_mbar:
 
         energies = []
         for lamda in lamdas:
-            bar, bar_std = self.run_bar(lamda)
-            energies.append([lamda, bar, bar_std])
+            bar = self.run_bar(lamda)
+            energies.append([lamda, bar])
 
         # raw bar energies at each lambda
-        results = pd.DataFrame(energies, columns=['lambda', 'bar', 'bar_std'])
+        results = pd.DataFrame(energies, columns=['lambda', 'bar'])
         results.to_csv(Path(self.run_path, 'bar_energies.csv'), index=False)
 
         # add together for final bar energies
         bar_total = results['bar'].sum()
-        bar_total_std = sd_error_prop(results['bar_std'].values)
+        #bar_total_std = sd_error_prop(results['bar_std'].values)
 
         with open(Path(self.run_path, 'bar_final.txt'), 'w') as fo:
             fo.write(f'bar_total: {bar_total}\n')
-            fo.write(f'bar_total_std: {bar_total_std}')
+            #fo.write(f'bar_total_std: {bar_total_std}')
 
         logging.info(f'{self.dest_path} {self.ligcom}')
         logging.info(f'bar_total: {bar_total}')
-        logging.info(f'bar_total_std: {bar_total_std}')
+        #logging.info(f'bar_total_std: {bar_total_std}')
 
 
 if __name__ == '__main__':
+
+    # constants in kcal/mol
+    R = 0.001987
+    T = 298.0
+    RT = R*T
 
     init_logger()
     args = parse_args()

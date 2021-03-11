@@ -3,3 +3,4 @@ epsin: 1.0
 radiscale: 1.0
 protscale: 1.0
 ligcom: 'ligands'
+del_traj: True
