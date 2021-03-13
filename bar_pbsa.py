@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/edward/test_build//miniconda/bin/python
 
 import yaml
 import numpy as np
@@ -15,7 +15,7 @@ import subprocess
 import shlex
 import os
 import itertools
-import pymbar
+#import pymbar
 
 
 def init_logger(log_path='mbar_pbsa.log'):
@@ -46,6 +46,8 @@ def parse_args():
 
     parser_c = subparsers.add_parser('run')
     parser_c.add_argument('run_input', type=str, help='Path in input run yaml file')
+    parser_c.add_argument('-n', '--num_processes', default=4, type=int,
+                          help='Number of processors to run SANDER jobs in parallel')
 
     parser_d = subparsers.add_parser('calc')
     parser_d.add_argument('calc_input', type=str, help='Path in input calc yaml file (same as run input)')
@@ -411,9 +413,10 @@ class run_bar_pbsa:
     stored together.
     '''
 
-    def __init__(self, yaml_path):
+    def __init__(self, yaml_path, np):
 
         self.yaml_path = yaml_path
+        self.np = np
         self.parse_input()
 
 
@@ -498,7 +501,7 @@ class run_bar_pbsa:
         pairs = self.get_cross_terms()
 
         # run parallel
-        pool = mp.Pool()
+        pool = mp.Pool(processes=self.np)
         out = [pool.apply_async(self.run_traj_parm, args=(pair[0], pair[1])) for pair in pairs]
 
         pool.close()
@@ -582,7 +585,7 @@ class parse_mbar:
         df['traj'] = traj
         df['parm'] = parm
         df['ligcom'] = self.ligcom
-        df['frame'] = range(1, len(energies) + 1)
+        df['frame'] = list(range(1, len(energies) + 1))
 
         return df
 
@@ -611,7 +614,7 @@ class parse_mbar:
             df_list.append(df)
 
         self.df = pd.concat(df_list, ignore_index=True)
-        self.df.to_csv(Path(self.run_path, 'energies.csv'))
+        self.df.to_csv(Path(self.run_path, 'energies.csv'), index=False)
 
 
 #    def run_bar(self, traj_lambda):
@@ -740,7 +743,15 @@ if __name__ == '__main__':
     # >>> python bar_pbsa.py run complex_run_input.yaml
     # >>> python bar_pbsa.py run ligand_run_input.yaml
     if args.command == 'run':
-        runner = run_bar_pbsa(args.run_input)
+
+        # set number of cpus for parallel sander
+        avail_cpus = mp.cpu_count()
+        if args.num_processes > avail_cpus:
+            n_cpus = avail_cpus
+        else:
+            n_cpus = args.num_processes
+
+        runner = run_bar_pbsa(args.run_input, n_cpus)
         runner.make_fold()
         runner.run_all()
 
